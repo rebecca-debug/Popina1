@@ -137,7 +137,7 @@ const Logo = () => (
     <img 
       src="/popina-logo.jpg" 
       alt="Popina - Relaxed Rural Restaurant in Queensberry" 
-      className="h-20 lg:h-24 w-auto object-contain transition-transform group-hover:scale-105"
+      className="h-14 lg:h-18 w-auto object-contain transition-transform group-hover:scale-105"
       referrerPolicy="no-referrer"
       onError={(e) => {
         // Fallback placeholder if image is not found
@@ -375,7 +375,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-40 lg:mt-64 flex flex-col sm:flex-row gap-6 justify-center items-center"
+              className="mt-16 lg:mt-24 flex flex-col sm:flex-row gap-6 justify-center items-center"
             >
               <Link 
                 to="/reservations"

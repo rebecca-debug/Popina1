@@ -43,18 +43,18 @@ const AboutPage = () => {
               <div className="grid grid-cols-2 gap-6 scale-95 lg:scale-100">
                 <div className="space-y-6 pt-12">
                   <div className="aspect-[3/4] rounded-sm overflow-hidden shadow-lg transform -rotate-2">
-                    <img src="popina-honey.jpg" alt="Beehives at Popina" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="/popina-honey.jpg" alt="Beehives at Popina" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-lg transform rotate-1">
-                    <img src="popina-saffron.jpg" alt="Saffron harvest" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="/popina-saffron.jpg" alt="Saffron harvest" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
                 <div className="space-y-6">
                   <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-lg transform rotate-2">
-                    <img src="Popina-Food.jpg" alt="Fresh zucchini and saffron" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="/Popina-Food.jpg" alt="Fresh zucchini and saffron" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="aspect-[3/4] rounded-sm overflow-hidden shadow-lg transform -rotate-1">
-                    <img src="popina-preserve-3507.jpg" alt="Preserved garden produce" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="/popina-preserve-3507.jpg" alt="Preserved garden produce" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
               </div>
