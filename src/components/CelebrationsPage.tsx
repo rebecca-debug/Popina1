@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, Calendar, Users, User, Quote, ArrowRight } from 'lucide-react';
+import { SITE_CONFIG } from '../site-config';
 
 const CelebrationsPage = () => {
+  const COLORS = SITE_CONFIG.colors;
+  const content = SITE_CONFIG.celebrations;
+  const images = SITE_CONFIG.images;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,11 +23,9 @@ const CelebrationsPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send to info@popina.co.nz
-    // For now, we simulate the submission
     console.log('Form submitted:', formData);
     
-    // Construct mailto link as a fallback/action for the user to actually send it if they want
+    // Construct mailto link as a fallback
     const subject = encodeURIComponent('Event Enquiry');
     const body = encodeURIComponent(
       `Name: ${formData.name}\n` +
@@ -31,7 +34,7 @@ const CelebrationsPage = () => {
       `Event Date: ${formData.date}\n` +
       `Estimated Guests: ${formData.guests}\n`
     );
-    // window.location.href = `mailto:info@popina.co.nz?subject=${subject}&body=${body}`;
+    // window.location.href = `mailto:${SITE_CONFIG.contact.email}?subject=${subject}&body=${body}`;
     
     setSubmitted(true);
   };
@@ -48,12 +51,12 @@ const CelebrationsPage = () => {
               transition={{ duration: 0.8 }}
               className="max-w-2xl"
             >
-              <span className="text-[#FF583F] uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8">Exclusive Events</span>
+              <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8" style={{ color: COLORS.cta }}>{content.hero.label}</span>
               <h1 className="text-5xl lg:text-7xl font-mono font-bold leading-[1.05] tracking-tight mb-8">
-                Gatherings that feel generous.
+                {content.hero.headline}
               </h1>
               <p className="text-dark/60 text-lg lg:text-xl font-medium leading-relaxed italic pr-12">
-                Popina is made for moments that matter. Exclusive use of the venue gives you the space to settle in, spread out, and make the place your own.
+                {content.hero.description}
               </p>
             </motion.div>
             <motion.div
@@ -63,7 +66,7 @@ const CelebrationsPage = () => {
               className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl"
             >
               <img 
-                src="/popina-southview.jpg" 
+                src={images.landscapeSouth} 
                 alt="Popina Event Setting" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -86,17 +89,17 @@ const CelebrationsPage = () => {
             >
               <div className="space-y-8">
                 <h2 className="text-4xl lg:text-5xl font-mono text-dark font-bold leading-tight">
-                  Whether it is a long lunch, a milestone birthday, or a wedding welcome dinner.
+                  {content.details.headline}
                 </h2>
                 <div className="text-dark/70 text-lg lg:text-xl font-medium leading-relaxed space-y-6">
                   <p>
-                    The venue can host up to <span className="text-dark font-bold">80 guests seated</span> or <span className="text-dark font-bold">120 guests cocktail-style</span>, with plenty of room for good food, good wine, and the kind of conversation that gets better as the afternoon rolls on.
+                    {content.details.p1}
                   </p>
                   <p>
-                    Food is served <span className="text-[#FF583F] italic">family-style</span> to the table, designed for sharing. Generous, seasonal, and without too much fuss—exactly how we like to eat.
+                    {content.details.p2}
                   </p>
                   <p>
-                    Menus and beverages can be customised to suit the occasion, from a relaxed shared feast to a more considered celebration with selected wines and local beers.
+                    {content.details.p3}
                   </p>
                 </div>
               </div>
@@ -111,11 +114,11 @@ const CelebrationsPage = () => {
                 <Quote className="absolute top-8 right-8 text-[#FF583F]/10 w-24 h-24" />
                 <div className="relative z-10">
                   <p className="text-2xl lg:text-3xl font-script italic text-dark/80 mb-8 leading-relaxed">
-                    “What can I say, your Team smashed Saturday out of the park!!!! The venue, the service, the food, just everything was faultless. Our day could not have been more wonderful.”
+                    {content.testimonial.quote}
                   </p>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-px bg-[#FF583F]" />
-                    <span className="uppercase tracking-widest text-[11px] font-extrabold text-dark/60">Tracey Henderson — May 2026</span>
+                    <div className="w-12 h-px bg-[#FF583F]" style={{ backgroundColor: COLORS.cta }} />
+                    <span className="uppercase tracking-widest text-[11px] font-extrabold text-dark/60">{content.testimonial.author}</span>
                   </div>
                 </div>
               </motion.div>
@@ -133,21 +136,21 @@ const CelebrationsPage = () => {
                 <h3 className="text-xl font-mono border-b border-white/10 pb-6">At a glance</h3>
                 <div className="space-y-6">
                   <div>
-                    <span className="block text-[#FF583F] uppercase tracking-widest text-[10px] font-bold mb-1">Capacity</span>
-                    <p className="text-lg">80 Seated / 120 Standing</p>
+                    <span className="block uppercase tracking-widest text-[10px] font-bold mb-1" style={{ color: COLORS.cta }}>Capacity</span>
+                    <p className="text-lg">{content.sidebar.capacity}</p>
                   </div>
                   <div>
-                    <span className="block text-[#FF583F] uppercase tracking-widest text-[10px] font-bold mb-1">Catering</span>
-                    <p className="text-lg">Family-style Sharing</p>
+                    <span className="block uppercase tracking-widest text-[10px] font-bold mb-1" style={{ color: COLORS.cta }}>Catering</span>
+                    <p className="text-lg">{content.sidebar.catering}</p>
                   </div>
                   <div>
-                    <span className="block text-[#FF583F] uppercase tracking-widest text-[10px] font-bold mb-1">Setting</span>
-                    <p className="text-lg">Rural Queensberry Oasis</p>
+                    <span className="block uppercase tracking-widest text-[10px] font-bold mb-1" style={{ color: COLORS.cta }}>Setting</span>
+                    <p className="text-lg">{content.sidebar.setting}</p>
                   </div>
                 </div>
               </div>
               <div className="aspect-square rounded-sm overflow-hidden shadow-xl">
-                 <img src="/popina-localspot.jpg" alt="Local gathering" className="w-full h-full object-cover" />
+                 <img src={images.localSpot} alt="Local gathering" className="w-full h-full object-cover" />
               </div>
             </motion.div>
           </div>
@@ -158,8 +161,8 @@ const CelebrationsPage = () => {
       <section id="enquiry" className="py-24 lg:py-40 bg-dark text-white relative overflow-hidden">
         {/* Background Decorative Gradient */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FF583F] rounded-full blur-[150px] -mr-[250px] -mt-[250px]" />
-           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#5A5A40] rounded-full blur-[150px] -ml-[250px] -mb-[250px]" />
+           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[150px] -mr-[250px] -mt-[250px]" style={{ backgroundColor: COLORS.cta }} />
+           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-[150px] -ml-[250px] -mb-[250px]" style={{ backgroundColor: COLORS.primary }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -169,17 +172,17 @@ const CelebrationsPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-[#FF583F] uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8">The Enquiry</span>
+              <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8" style={{ color: COLORS.cta }}>{content.enquiry.label}</span>
               <h2 className="text-5xl lg:text-7xl font-mono font-bold mb-12 leading-tight">
-                Plan your <br/> perfect day.
+                {content.enquiry.headline}
               </h2>
               <div className="space-y-8 text-white/60 text-lg leading-relaxed font-medium max-w-lg">
                 <p>
-                  Popina gives you the bones of a beautiful event: warm hospitality, honest food, a calm setting, and a team that knows how to make people feel well cared for.
+                  {content.enquiry.p1}
                 </p>
                 <div className="flex items-center gap-4 py-4 border-t border-white/10">
-                  <Mail className="text-[#FF583F]" size={20} />
-                  <span>info@popina.co.nz</span>
+                  <Mail style={{ color: COLORS.cta }} size={20} />
+                  <span>{SITE_CONFIG.contact.email}</span>
                 </div>
               </div>
             </motion.div>
@@ -197,13 +200,14 @@ const CelebrationsPage = () => {
                   className="text-center py-12"
                 >
                   <div className="w-20 h-20 bg-[#5A5A40]/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                    <Mail className="text-[#5A5A40] w-10 h-10" />
+                    <Mail className="w-10 h-10" style={{ color: COLORS.primary }} />
                   </div>
                   <h3 className="text-3xl font-mono font-bold text-dark mb-4">Thank you for your enquiry.</h3>
                   <p className="text-dark/60 text-lg italic mb-8">We'll be in touch soon to discuss your event at Popina.</p>
                   <button 
                     onClick={() => setSubmitted(false)}
-                    className="text-[#FF583F] font-bold uppercase tracking-widest text-xs flex items-center gap-2 mx-auto"
+                    className="font-bold uppercase tracking-widest text-xs flex items-center gap-2 mx-auto"
+                    style={{ color: COLORS.cta }}
                   >
                     Send another enquiry <ArrowRight size={14} />
                   </button>
@@ -288,7 +292,8 @@ const CelebrationsPage = () => {
 
                   <button 
                     type="submit"
-                    className="w-full bg-dark text-white py-5 rounded-sm text-[12px] font-bold uppercase tracking-[0.4em] hover:bg-[#FF583F] transition-all transform active:scale-[0.98] mt-4"
+                    className="w-full bg-dark text-white py-5 rounded-sm text-[12px] font-bold uppercase tracking-[0.4em] hover:opacity-90 transition-all transform active:scale-[0.98] mt-4"
+                    style={{ backgroundColor: COLORS.dark }}
                   >
                     Send Enquiry
                   </button>

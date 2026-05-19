@@ -24,16 +24,11 @@ import {
 
 import AboutPage from './components/AboutPage';
 import CelebrationsPage from './components/CelebrationsPage';
+import { SITE_CONFIG } from './site-config';
 
 // --- Constants & Types ---
 
-const COLORS = {
-  primary: '#5A5A40', // Olive green from reference
-  bg: '#F5F2ED',      // Warm off-white
-  dark: '#1C1C1C',    // Charcoal dark
-  accent: '#A49F86',  // Muted sage
-  cta: '#FF583F',     // Vibrant Orange-Red
-};
+const COLORS = SITE_CONFIG.colors;
 
 const NAV_LINKS = [
   { name: 'Reservations', href: '/reservations' },
@@ -135,8 +130,8 @@ const Image = ({
 const Logo = () => (
   <div id="nav-logo" className="flex items-center group cursor-pointer">
     <img 
-      src="/popina-logo.jpg" 
-      alt="Popina - Relaxed Rural Restaurant in Queensberry" 
+      src={SITE_CONFIG.logo} 
+      alt={`${SITE_CONFIG.brandName} - Relaxed Rural Restaurant in Queensberry`} 
       className="h-14 lg:h-18 w-auto object-contain transition-transform group-hover:scale-105"
       referrerPolicy="no-referrer"
       onError={(e) => {
@@ -159,6 +154,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLabelStyle = { color: COLORS.dark + 'B3' }; // dark/70
+
   return (
     <nav 
       id="navbar"
@@ -178,7 +175,8 @@ const Navbar = () => {
             <Link 
               key={link.name} 
               to={link.href} 
-              className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-dark/70 hover:text-[#FF583F] transition-colors"
+              className="text-[10px] font-extrabold uppercase tracking-[0.3em] transition-colors"
+              style={{ color: COLORS.dark + 'B3' }}
             >
               {link.name}
             </Link>
@@ -186,7 +184,8 @@ const Navbar = () => {
           <Link 
             id="nav-cta" 
             to="/reservations"
-            className="bg-[#FF583F] hover:bg-dark text-white px-10 py-4 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] transition-all shadow-md active:scale-95 text-center ml-4"
+            className="hover:bg-dark text-white px-10 py-4 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] transition-all shadow-md active:scale-95 text-center ml-4"
+            style={{ backgroundColor: COLORS.cta }}
           >
             Book Now
           </Link>
@@ -220,7 +219,8 @@ const Navbar = () => {
             ))}
             <Link 
               to="/reservations"
-              className="bg-[#FF583F] text-white py-4 rounded-sm text-center"
+              className="text-white py-4 rounded-sm text-center"
+              style={{ backgroundColor: COLORS.cta }}
               onClick={() => setIsOpen(false)}
             >
               Book Now
@@ -255,7 +255,8 @@ const Footer = () => (
             <div className="space-y-6 text-[11px] font-bold uppercase tracking-[0.15em] text-dark/60">
               <Link 
                 to="/gift-cards"
-                className="mt-2 bg-[#E64D35] text-white px-10 py-5 rounded-sm text-[12px] font-extrabold tracking-[0.4em] uppercase hover:bg-dark hover:scale-105 transition-all inline-block w-fit text-center shadow-xl hover:shadow-2xl active:scale-95"
+                className="mt-2 text-white px-10 py-5 rounded-sm text-[12px] font-extrabold tracking-[0.4em] uppercase hover:bg-dark hover:scale-105 transition-all inline-block w-fit text-center shadow-xl hover:shadow-2xl active:scale-95"
+                style={{ backgroundColor: COLORS.cta }}
               >
                 Buy a Gift Card
               </Link>
@@ -263,7 +264,7 @@ const Footer = () => (
               <div className="pt-4">
                 <h5 className="text-dark mb-4 text-[10px] tracking-[0.3em] font-extrabold uppercase">Follow Us</h5>
                 <div className="flex gap-3">
-                  <a href="https://www.instagram.com/popina_queensberry" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-dark/10 flex items-center justify-center text-dark/60 hover:bg-dark hover:text-white transition-all">
+                  <a href={SITE_CONFIG.links.instagram} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-dark/10 flex items-center justify-center text-dark/60 hover:bg-dark hover:text-white transition-all">
                     <Instagram size={16} />
                   </a>
                   <a href="#" className="w-9 h-9 rounded-full border border-dark/10 flex items-center justify-center text-dark/60 hover:bg-dark hover:text-white transition-all">
@@ -280,18 +281,18 @@ const Footer = () => (
           <div className="space-y-10 text-[11px] font-bold uppercase tracking-[0.15em] text-dark/60">
             <div>
               <h5 className="text-dark mb-4 text-[10px] tracking-[0.3em] font-extrabold uppercase">Address</h5>
-              <p className="opacity-80">26 Pukerangi Drive, Queensberry 9383</p>
+              <p className="opacity-80">{SITE_CONFIG.contact.address}</p>
             </div>
             <div>
               <h5 className="text-dark mb-4 text-[10px] tracking-[0.3em] font-extrabold uppercase">Phone</h5>
-              <p className="opacity-80">+64 274 110 697</p>
+              <p className="opacity-80">{SITE_CONFIG.contact.phone}</p>
             </div>
             <div>
               <h5 className="text-dark mb-4 text-[10px] tracking-[0.3em] font-extrabold uppercase text-center">Opening Hours</h5>
               <div className="space-y-1 opacity-80">
-                <p className="mb-2">Thursday - Sunday</p>
-                <p>11:00 am - Last Seating 7:30 pm</p>
-                <p className="italic mt-6 font-medium tracking-tight">15% Surcharge on public holidays</p>
+                <p className="mb-2">{SITE_CONFIG.contact.openingHours.days}</p>
+                <p>{SITE_CONFIG.contact.openingHours.hours}</p>
+                <p className="italic mt-6 font-medium tracking-tight">{SITE_CONFIG.contact.openingHours.note}</p>
               </div>
             </div>
           </div>
@@ -302,7 +303,10 @@ const Footer = () => (
           <p className="text-dark/60 text-[11px] font-medium leading-[1.8] mb-10 tracking-wide">
             Join our family for happy hours specials, first access to community events, and always in the know. No fees, just good times.
           </p>
-          <button className="w-full bg-[#FF583F] text-white py-5 rounded-sm text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-dark transition-all shadow-xl active:scale-[0.98]">
+          <button 
+            className="w-full text-white py-5 rounded-sm text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-dark transition-all shadow-xl active:scale-[0.98]"
+            style={{ backgroundColor: COLORS.cta }}
+          >
             Join Now
           </button>
         </div>
@@ -313,7 +317,7 @@ const Footer = () => (
           <a href="#" className="hover:text-dark transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-dark transition-colors">Terms of Service</a>
         </div>
-        <p>© 2026 POPINA. HANDCRAFTED WITH SOUL BY 8TWENTY.</p>
+        <p>© 2026 {SITE_CONFIG.brandName}. HANDCRAFTED WITH SOUL BY 8TWENTY.</p>
       </div>
     </div>
   </footer>
@@ -333,8 +337,8 @@ const Home = () => {
           className="absolute inset-0 z-0 h-[120%]" // Ensure it's taller for parallax
         >
           <Image 
-            src="/popina-hero.jpg" 
-            alt="Popina Rural Modern Restaurant at Golden Hour" 
+            src={SITE_CONFIG.images.hero} 
+            alt={`${SITE_CONFIG.brandName} Rural Modern Restaurant at Golden Hour`} 
             priority={true}
             aspectRatio="h-full w-full"
             className="w-full h-full"
@@ -357,18 +361,18 @@ const Home = () => {
             <div className="flex items-center gap-2 mb-8 bg-white/10 backdrop-blur-md py-2 px-5 rounded-full w-fit mx-auto border border-white/20">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={12} className="fill-[#FF583F] text-[#FF583F]" />
+                  <Star key={i} size={12} style={{ color: COLORS.cta, fill: COLORS.cta }} />
                 ))}
               </div>
-              <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-white">5-Star Google Reviews</span>
+              <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-white">{SITE_CONFIG.trustBadge}</span>
             </div>
 
-            <span className="text-[#FF583F] uppercase tracking-[0.5em] text-[15px] lg:text-[18px] font-extrabold block mb-8 drop-shadow-sm">
-              FOR LOCALS, FAMILIES, AND TRAVELERS
+            <span className="uppercase tracking-[0.5em] text-[15px] lg:text-[18px] font-extrabold block mb-8 drop-shadow-sm" style={{ color: COLORS.cta }}>
+              {SITE_CONFIG.home.hero.topLabel}
             </span>
             
             <h1 className="text-4xl lg:text-7xl font-mono font-bold leading-[1.1] tracking-tight drop-shadow-lg">
-              A relaxed rural restaurant <br className="hidden lg:block" /> serving honest food & <br className="hidden lg:block" /> genuine hospitality.
+              {SITE_CONFIG.home.hero.headline}
             </h1>
             
             <motion.div 
@@ -379,7 +383,8 @@ const Home = () => {
             >
               <Link 
                 to="/reservations"
-                className="bg-[#FF583F] text-white px-14 py-5 rounded-sm text-[12px] font-bold uppercase tracking-[0.4em] hover:bg-[#E64D35] transition-all shadow-2xl hover:scale-105 active:scale-95 text-center"
+                className="text-white px-14 py-5 rounded-sm text-[12px] font-bold uppercase tracking-[0.4em] transition-all shadow-2xl hover:scale-105 active:scale-95 text-center"
+                style={{ backgroundColor: COLORS.cta }}
               >
                 Book a Table
               </Link>
@@ -422,16 +427,16 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[#FF583F] uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8">Welcome to Popina</span>
+            <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8" style={{ color: COLORS.cta }}>{SITE_CONFIG.home.welcome.label}</span>
             <h2 className="text-3xl lg:text-6xl font-script italic text-dark/90 leading-tight mb-12">
-              Popina is a modern café and evening restaurant built around honest food, genuine hospitality, and respect for where good things come from.
+              {SITE_CONFIG.home.welcome.headline}
             </h2>
             <div className="space-y-6 text-dark/60 text-lg lg:text-xl font-medium leading-relaxed max-w-3xl mx-auto italic">
               <p>
-                We’re creating a space where people can slow down, connect, and enjoy hospitality that feels thoughtful, comforting, and real.
+                {SITE_CONFIG.home.welcome.description}
               </p>
-              <p className="text-[#FF583F] font-bold uppercase tracking-widest text-[11px] not-italic mt-8">
-                A quick coffee, a long lunch, or dinner shared with friends.
+              <p className="font-bold uppercase tracking-widest text-[11px] not-italic mt-8" style={{ color: COLORS.cta }}>
+                {SITE_CONFIG.home.welcome.subDescription}
               </p>
             </div>
             <div className="w-16 h-px bg-dark/20 mx-auto mt-12" />
@@ -449,7 +454,7 @@ const Home = () => {
         >
           <h2 className="text-2xl font-mono tracking-wide">Find your way to the Popina Corner</h2>
           <a 
-            href="https://www.google.com/maps/dir/?api=1&destination=26+Pukerangi+Drive,+Queensberry+9383" 
+            href={SITE_CONFIG.links.directions} 
             target="_blank" 
             rel="noopener noreferrer"
             id="directions-btn" 
@@ -473,7 +478,7 @@ const Home = () => {
           >
             <div className="relative h-full overflow-hidden">
               <Image 
-                src="/popina-localspot.jpg" 
+                src={SITE_CONFIG.images.localSpot} 
                 alt="Atmospheric view of the Popina corner, a cozy and relaxed rural dining space in Queensberry" 
                 aspectRatio="w-full h-full"
                 className="group-hover:scale-110 transition-transform duration-[5s]"
@@ -492,14 +497,15 @@ const Home = () => {
             whileHover={{ y: -8 }}
             className="bg-white p-10 px-12 flex flex-col items-center text-center justify-center border border-dark/5 shadow-sm"
           >
-            <UtensilsCrossed size={40} className="text-[#FF583F] mb-8" />
-            <h3 className="text-2xl font-mono mb-6">View Menu</h3>
+            <UtensilsCrossed size={40} className="mb-8" style={{ color: COLORS.cta }} />
+            <h3 className="text-2xl font-mono mb-6">{SITE_CONFIG.home.features.menu.title}</h3>
             <p className="text-dark/50 text-sm mb-10 leading-relaxed font-medium">
-              Discover real food lovingly prepared with quality ingredients for your pleasure
+              {SITE_CONFIG.home.features.menu.description}
             </p>
             <Link 
               to="/reservations"
-              className="bg-[#FF583F] text-white w-full py-4 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-dark transition-all text-center"
+              className="text-white w-full py-4 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-dark transition-all text-center"
+              style={{ backgroundColor: COLORS.cta }}
             >
               View The Menu
             </Link>
@@ -515,14 +521,15 @@ const Home = () => {
             whileHover={{ y: -8 }}
             className="bg-[#E9E5DE] p-10 px-12 flex flex-col items-center text-center justify-center shadow-sm"
           >
-            <Calendar size={40} className="text-[#FF583F] mb-8" />
-            <h3 className="text-2xl font-mono mb-6">Book a Table</h3>
+            <Calendar size={40} className="mb-8" style={{ color: COLORS.cta }} />
+            <h3 className="text-2xl font-mono mb-6">{SITE_CONFIG.home.features.booking.title}</h3>
             <p className="text-dark/50 text-sm mb-10 leading-relaxed font-medium">
-              Settle in for genuine hospitality in our relaxed rural setting
+              {SITE_CONFIG.home.features.booking.description}
             </p>
             <Link 
               to="/reservations"
-              className="bg-[#FF583F] text-white w-full py-4 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-dark transition-all text-center"
+              className="text-white w-full py-4 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-dark transition-all text-center"
+              style={{ backgroundColor: COLORS.cta }}
             >
               Reserve Now
             </Link>
@@ -535,18 +542,18 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            href="https://www.instagram.com/popina_queensberry"
+            href={SITE_CONFIG.links.instagram}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ y: -8 }}
             className="bg-[#E9E5DE] p-10 px-12 flex flex-col items-center text-center justify-center shadow-sm"
           >
-            <Info size={40} className="text-[#FF583F] mb-8" />
-            <h3 className="text-2xl font-mono mb-6">Current Events</h3>
+            <Info size={40} className="mb-8" style={{ color: COLORS.cta }} />
+            <h3 className="text-2xl font-mono mb-6">{SITE_CONFIG.home.features.events.title}</h3>
             <p className="text-dark/50 text-sm mb-10 leading-relaxed font-medium">
-              From Live Music to community gathering - check out whats on at the Popina corner
+              {SITE_CONFIG.home.features.events.description}
             </p>
-            <div className="bg-[#FF583F] text-white w-full py-4 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-dark transition-all">
+            <div className="text-white w-full py-4 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-dark transition-all" style={{ backgroundColor: COLORS.cta }}>
               Follow Us on Instagram
             </div>
           </motion.a>
@@ -561,14 +568,15 @@ const Home = () => {
             whileHover={{ y: -8 }}
             className="bg-white p-10 px-12 flex flex-col items-center text-center justify-center border border-dark/5 shadow-sm"
           >
-            <Wine size={40} className="text-[#FF583F] mb-8" />
-            <h3 className="text-2xl font-mono mb-6">Celebrations</h3>
+            <Wine size={40} className="mb-8" style={{ color: COLORS.cta }} />
+            <h3 className="text-2xl font-mono mb-6">{SITE_CONFIG.home.features.celebrations.title}</h3>
             <p className="text-dark/50 text-sm mb-10 leading-relaxed font-medium">
-              Got a celebration coming up? Let us host your next special moment.
+              {SITE_CONFIG.home.features.celebrations.description}
             </p>
             <Link 
               to="/celebrations"
-              className="bg-[#FF583F] text-white w-full py-4 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-dark transition-all text-center"
+              className="text-white w-full py-4 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-dark transition-all text-center"
+              style={{ backgroundColor: COLORS.cta }}
             >
               Learn More
             </Link>
@@ -585,7 +593,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <span className="text-accent uppercase tracking-[0.4em] text-[10px] font-extrabold block mb-6">Testimonials</span>
+            <span className="uppercase tracking-[0.4em] text-[10px] font-extrabold block mb-6" style={{ color: COLORS.accent }}>Testimonials</span>
             <h2 className="text-4xl lg:text-6xl font-mono text-dark/90">Notes from the Table</h2>
           </motion.div>
 
@@ -603,7 +611,7 @@ const Home = () => {
                   <div className="group-hover:text-white transition-colors">
                     <div className="flex space-x-1 mb-8">
                       {[...Array(t.rating)].map((_, i) => (
-                        <Star key={i} size={14} className="fill-[#FF583F] text-[#FF583F]" />
+                        <Star key={i} size={14} style={{ color: COLORS.cta, fill: COLORS.cta }} />
                       ))}
                     </div>
                     <p className="text-xl font-mono italic font-light leading-relaxed mb-10">
@@ -620,7 +628,7 @@ const Home = () => {
               {/* Featured Food Image */}
               <div className="bg-white overflow-hidden aspect-square md:aspect-auto h-80 md:h-auto border-t md:border-t-0 md:border-l border-dark/10 group">
                 <Image 
-                  src="/popina-view.jpg" 
+                  src={SITE_CONFIG.images.foodView} 
                   alt="A beautifully presented seasonal dish and a glass of wine, showcasing Popina's honest food and hospitality" 
                   aspectRatio="w-full h-full"
                   className="group-hover:scale-105 transition-transform duration-[3s]"
@@ -631,7 +639,7 @@ const Home = () => {
             {/* Vertical Profile Image Overlay */}
             <div className="lg:col-span-4 h-[600px] lg:h-auto relative group overflow-hidden">
               <Image 
-                src="/popina-southview.jpg" 
+                src={SITE_CONFIG.images.landscapeSouth} 
                 alt="Stunning southern landscape view from the Popina restaurant building, showing the iconic New Zealand rural scenery" 
                 aspectRatio="w-full h-full"
                 className="group-hover:scale-105 transition-transform duration-[3s]"
@@ -648,10 +656,11 @@ const Home = () => {
             className="mt-16"
           >
             <a 
-              href="https://www.google.com/search?sca_esv=c17abc454b143b6a&rlz=1C5CHFA_enNZ981NZ982&sxsrf=ANbL-n7YeAHD7_4jY9KZBDcuV0YD0yCohg:1778231860360&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOS5lnDTDnrwLSICulQqfj4pjR1wQXlzPZo7BQxHPoRpBRfroMt8_KSB5w43IdL9F_jhRE1DjoBUePxiFlNjSQt06tk1E&q=Popina+Reviews&sa=X&ved=2ahUKEwjs_vDyramUAxXoVPUHHZVKEusQ0bkNegQIKxAH&biw=1358&bih=707&dpr=1"
+              href={SITE_CONFIG.links.googleReviews}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#FF583F] font-bold uppercase tracking-[0.3em] text-[10px] hover:gap-4 transition-all"
+              className="inline-flex items-center gap-2 font-bold uppercase tracking-[0.3em] text-[10px] hover:gap-4 transition-all"
+              style={{ color: COLORS.cta }}
             >
               Read more reviews on Google <ChevronRight size={14} />
             </a>
@@ -685,7 +694,7 @@ const ReservationPage = () => {
     <div className="bg-[#F5F2ED] pt-32 pb-20">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-[#FF583F] uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-6">Reservations</span>
+          <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-6" style={{ color: COLORS.cta }}>Reservations</span>
           <h1 className="text-5xl lg:text-8xl font-mono font-bold text-dark/90 mb-8">Book Your Table</h1>
           <p className="text-dark/50 text-lg lg:text-xl max-w-2xl mx-auto font-medium italic">
             Join us for honest food and genuine hospitality in the heart of rural Queensberry. 
@@ -696,7 +705,7 @@ const ReservationPage = () => {
         <div className="bg-white p-4 md:p-8 rounded-sm shadow-xl border border-dark/5 overflow-hidden">
           <iframe 
             data-id="nbi-widget" 
-            src="https://bookings.nowbookit.com/?accountid=159faaf0-9137-4042-9224-bcbb3f90a2d9&venueid=14462&theme=light&colors=hex,80cbc4,00695c&font=Montserrat"
+            src={SITE_CONFIG.links.bookingIframe}
             className="w-full h-[800px] border-none"
             title="Now Book It Reservation Widget"
           />
@@ -706,11 +715,12 @@ const ReservationPage = () => {
            <div>
              <h3 className="text-2xl font-mono mb-4">Groups & Celebrations</h3>
               <p className="text-dark/60 text-sm leading-relaxed mb-6">
-                For groups larger than 12 or to talk to us about hosting your next private event, please view our celebrations page or get in touch on +64 274 110 697
+                For groups larger than 12 or to talk to us about hosting your next private event, please view our celebrations page or get in touch on {SITE_CONFIG.contact.phone}
               </p>
              <Link 
                to="/celebrations"
-               className="text-[#FF583F] font-bold uppercase tracking-[0.2em] text-[10px] flex items-center gap-2 hover:gap-3 transition-all mx-auto md:mx-0"
+               className="font-bold uppercase tracking-[0.2em] text-[10px] flex items-center gap-2 hover:gap-3 transition-all mx-auto md:mx-0"
+               style={{ color: COLORS.cta }}
              >
                View Celebrations <ChevronRight size={14} />
              </Link>
@@ -751,7 +761,7 @@ const GiftCardPage = () => {
     <div className="bg-[#F5F2ED] pt-32 pb-20">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-[#FF583F] uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-6">Gift Cards</span>
+          <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-6" style={{ color: COLORS.cta }}>Gift Cards</span>
           <h1 className="text-5xl lg:text-8xl font-mono font-bold text-dark/90 mb-8">Share the Love</h1>
           <p className="text-dark/50 text-lg lg:text-xl max-w-2xl mx-auto font-medium italic">
             The perfect gift for any occasion. Treat your friends and family to the Popina experience.
@@ -761,7 +771,7 @@ const GiftCardPage = () => {
         <div className="bg-white p-4 md:p-8 rounded-sm shadow-xl border border-dark/5 overflow-hidden">
           <iframe 
             data-id="nbi-widget" 
-            src="https://giftcards.nowbookit.com/cards?accountid=159faaf0-9137-4042-9224-bcbb3f90a2d9&venueid=14462&theme=light&accent=95,124,138"
+            src={SITE_CONFIG.links.giftCardIframe}
             className="w-full h-[800px] border-none"
             title="Now Book It Gift Card Widget"
           />

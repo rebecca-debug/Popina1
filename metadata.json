@@ -2,5 +2,5 @@
   "name": "Popina Restaurant",
   "description": "A sophisticated homepage for Popina, an Italian-inspired restaurant focused on community and sustainability.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

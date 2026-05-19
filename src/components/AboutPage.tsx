@@ -2,8 +2,13 @@ import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ArrowRight } from 'lucide-react';
+import { SITE_CONFIG } from '../site-config';
 
 const AboutPage = () => {
+  const COLORS = SITE_CONFIG.colors;
+  const content = SITE_CONFIG.about;
+  const images = SITE_CONFIG.images;
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -20,22 +25,22 @@ const AboutPage = () => {
               transition={{ duration: 0.8 }}
               className="order-1"
             >
-              <span className="text-[#FF583F] uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8">The Land</span>
+              <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8" style={{ color: COLORS.cta }}>{content.hero.label}</span>
               <h1 className="text-5xl lg:text-7xl font-mono font-bold leading-[1.05] tracking-tight mb-8">
-                From dry land to <br/> something living.
+                {content.hero.headline}
               </h1>
               <div className="space-y-8 text-dark/70 text-base lg:text-lg leading-relaxed font-medium">
                 <p>
-                  For the past ten years, Brenda and Tony have been growing trees from seed and planting them across the property. Slowly, and with no grand performance. Just the work
+                  {content.hero.p1}
                 </p>
                 <p>
-                  The vision is simple: restore the land, make it productive, and let the place become part of the experience.
+                  {content.hero.p2}
                 </p>
-                <p className="bg-[#5A5A40]/5 p-8 border-l border-[#5A5A40]/20 italic">
-                  "Fruit trees. Garlic. Saffron. Gardens. Compost. Chickens. Eggs for baking. Food scraps are going back into the system."
+                <p className="p-8 border-l italic" style={{ backgroundColor: COLORS.primary + '0D', borderColor: COLORS.primary + '33' }}>
+                  "{content.hero.quote}"
                 </p>
                 <p>
-                  It is not sustainability as a slogan. It is a loop. A working, circular rhythm that starts with care for the land and comes back to the table.
+                  {content.hero.p3}
                 </p>
               </div>
             </motion.div>
@@ -43,18 +48,18 @@ const AboutPage = () => {
               <div className="grid grid-cols-2 gap-6 scale-95 lg:scale-100">
                 <div className="space-y-6 pt-12">
                   <div className="aspect-[3/4] rounded-sm overflow-hidden shadow-lg transform -rotate-2">
-                    <img src="/popina-honey.jpg" alt="Beehives at Popina" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src={images.aboutHero1} alt="Beehives at Popina" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-lg transform rotate-1">
-                    <img src="/popina-saffron.jpg" alt="Saffron harvest" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src={images.aboutHero2} alt="Saffron harvest" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
                 <div className="space-y-6">
                   <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-lg transform rotate-2">
-                    <img src="/Popina-Food.jpg" alt="Fresh zucchini and saffron" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src={images.aboutHero3} alt="Fresh zucchini and saffron" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="aspect-[3/4] rounded-sm overflow-hidden shadow-lg transform -rotate-1">
-                    <img src="/popina-preserve-3507.jpg" alt="Preserved garden produce" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src={images.aboutHero4} alt="Preserved garden produce" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
               </div>
@@ -68,7 +73,7 @@ const AboutPage = () => {
         {/* Faded Logo Background */}
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden">
           <img 
-            src="/popina-logo.jpg" 
+            src={SITE_CONFIG.logo} 
             alt="" 
             className="w-[80%] max-w-5xl h-auto grayscale" 
             aria-hidden="true"
@@ -83,7 +88,7 @@ const AboutPage = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl lg:text-6xl font-script italic text-dark/90 leading-tight mb-10">
-              "Not a polished city restaurant dropped into the country. Something more useful than that. A community oasis, grown from the ground up."
+              "{content.philosophy.quote}"
             </h2>
             <div className="w-16 h-px bg-dark/20 mx-auto" />
           </motion.div>
@@ -99,16 +104,16 @@ const AboutPage = () => {
             viewport={{ once: true }}
             className="max-w-4xl"
           >
-             <span className="text-[#FF583F] uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-12">Culinary Heart</span>
+             <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-12" style={{ color: COLORS.cta }}>{content.culinary.label}</span>
              <h2 className="text-4xl lg:text-6xl font-mono font-bold mb-12 leading-tight">
-               Our Food
+               {content.culinary.headline}
              </h2>
              <div className="space-y-8 text-dark/70 text-lg lg:text-xl font-medium leading-relaxed max-w-3xl">
                 <p className="text-dark font-bold">
-                  Honest dishes, fresh, simple, and seasonal.
+                  {content.culinary.p1}
                 </p>
                 <p>
-                  Our menus take gentle inspiration from the Mediterranean, shaped by local produce, thoughtful technique, and a love of food made to be shared. Everything is guided by simplicity, flavour, and care.
+                  {content.culinary.p2}
                 </p>
              </div>
           </motion.div>
@@ -119,8 +124,8 @@ const AboutPage = () => {
       {/* History & Hospitality */}
       <section className="py-24 lg:py-40 bg-[#F5F2ED] text-dark shadow-inner overflow-hidden relative">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF583F] rounded-full blur-[150px] -mr-48 -mt-48" />
-           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#5A5A40] rounded-full blur-[150px] -ml-48 -mb-48" />
+           <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-[150px] -mr-48 -mt-48" style={{ backgroundColor: COLORS.cta }} />
+           <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-[150px] -ml-48 -mb-48" style={{ backgroundColor: COLORS.primary }} />
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -132,7 +137,7 @@ const AboutPage = () => {
               className="relative aspect-square lg:aspect-[4/5] rounded-sm overflow-hidden shadow-2xl"
             >
               <img 
-                src="/popina-restaurant.jpg" 
+                src={images.restaurantInterior} 
                 alt="Inside Popina Restaurant" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -145,25 +150,25 @@ const AboutPage = () => {
               transition={{ duration: 0.8 }}
               className="max-w-xl"
             >
-              <span className="text-[#FF583F] uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-12">Expertise</span>
+              <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-12" style={{ color: COLORS.cta }}>{content.hospitality.label}</span>
               <h2 className="text-4xl lg:text-6xl font-mono font-bold mb-16 leading-tight">
-                Hospitality, with <br/> history behind it.
+                {content.hospitality.headline}
               </h2>
               <div className="space-y-8 text-dark/70 text-lg leading-relaxed font-medium">
                 <div className="space-y-8">
                   <p>
-                    Brenda and Tony are not new to feeding people. Before Popina, they spent more than 20 years running Wellington’s Ministry of Food, followed by a stint at Missy’s Kitchen in Wanaka.
+                    {content.hospitality.p1}
                   </p>
                   <p>
-                    Years of kitchens, service, regulars, early mornings, late finishes, and knowing exactly when a table needs attention and when it needs to be left alone.
+                    {content.hospitality.p2}
                   </p>
                 </div>
                 <div className="space-y-8">
                   <p>
-                    Behind the scenes is a passionate team that cares deeply about hospitality, quality, and creating an experience that feels welcoming, relaxed, and genuine.
+                    {content.hospitality.p3}
                   </p>
-                  <p className="text-[#FF583F] text-2xl font-mono italic border-t border-dark/10 pt-8">
-                    "Popina is for people who like food that makes sense."
+                  <p className="text-2xl font-mono italic border-t border-dark/10 pt-8" style={{ color: COLORS.cta }}>
+                    "{content.hospitality.quote}"
                   </p>
                 </div>
               </div>
@@ -183,7 +188,7 @@ const AboutPage = () => {
               transition={{ duration: 1 }}
               className="relative aspect-video lg:aspect-[4/5] rounded-sm overflow-hidden shadow-2xl group"
             >
-              <img src="/popina-hero1.jpg" alt="Popina restaurant ambience" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[5s]" referrerPolicy="no-referrer" />
+              <img src={images.ambientHero} alt="Popina restaurant ambience" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[5s]" referrerPolicy="no-referrer" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -191,33 +196,27 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-[#FF583F] uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8">The Restaurant</span>
+              <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8" style={{ color: COLORS.cta }}>{content.restaurant.label}</span>
               <h2 className="text-4xl lg:text-6xl font-mono font-bold mb-8 leading-tight">
-                A restaurant with <br className="hidden lg:block"/> room to breathe.
+                {content.restaurant.headline}
               </h2>
               <div className="space-y-8 text-dark/70 text-lg leading-relaxed font-medium">
                 <p>
-                  Seasonal produce. Proper ingredients. Simple cooking done with care. Drinks chosen with the same thought. 
+                  {content.restaurant.p1}
                 </p>
                 <p>
-                  A room where people can relax, talk, laugh, bring the family, park the boat, pull in with the horse float, or stop in after driving through Central Otago.
+                  {content.restaurant.p2}
                 </p>
                 <div className="flex flex-col gap-4 py-8">
-                  <div className="flex items-center gap-4 text-dark/90 font-bold uppercase tracking-widest text-[11px]">
-                    <ArrowRight size={14} className="text-[#FF583F]" />
-                    A place for locals.
-                  </div>
-                  <div className="flex items-center gap-4 text-dark/90 font-bold uppercase tracking-widest text-[11px]">
-                    <ArrowRight size={14} className="text-[#FF583F]" />
-                    A place for travellers who want the real thing.
-                  </div>
-                  <div className="flex items-center gap-4 text-dark/90 font-bold uppercase tracking-widest text-[11px]">
-                    <ArrowRight size={14} className="text-[#FF583F]" />
-                    A place for families.
-                  </div>
+                  {content.restaurant.list.map((item, i) => (
+                    <div key={i} className="flex items-center gap-4 text-dark/90 font-bold uppercase tracking-widest text-[11px]">
+                      <ArrowRight size={14} style={{ color: COLORS.cta }} />
+                      {item}
+                    </div>
+                  ))}
                 </div>
-                <p className="border-l-4 border-[#FF583F] pl-8 py-2">
-                  Popina is still growing. The orchard will take time. Gardens do not hurry because you have a launch date. Trees are famously bad at respecting marketing timelines.
+                <p className="border-l-4 pl-8 py-2" style={{ borderColor: COLORS.cta }}>
+                  {content.restaurant.note}
                 </p>
               </div>
             </motion.div>
@@ -226,7 +225,7 @@ const AboutPage = () => {
       </section>
 
       {/* Final Call to Action */}
-      <section className="py-24 lg:py-32 bg-[#5A5A40] text-white">
+      <section className="py-24 lg:py-32 text-white" style={{ backgroundColor: COLORS.primary }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl lg:text-6xl font-mono italic mb-12">Welcome.</h2>
           <p className="text-white/80 text-xl lg:text-2xl font-mono leading-relaxed mb-16">
@@ -235,7 +234,8 @@ const AboutPage = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link 
               to="/reservations" 
-              className="bg-[#FF583F] text-white px-10 py-4 rounded-sm text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-dark transition-all w-full sm:w-auto text-center"
+              className="text-white px-10 py-4 rounded-sm text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-dark transition-all w-full sm:w-auto text-center"
+              style={{ backgroundColor: COLORS.cta }}
             >
               Book a Table
             </Link>
