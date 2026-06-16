@@ -14,7 +14,7 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className="bg-[#F5F2ED] selection:bg-[#FF583F]/30 antialiased">
+    <div className="bg-[#F5F2ED] selection:bg-[#CC5300]/30 antialiased">
       {/* Hero Section: From Dry Land to Living */}
       <section className="relative pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden border-b border-dark/5">
         <div className="max-w-7xl mx-auto px-6">
@@ -70,12 +70,12 @@ const AboutPage = () => {
 
       {/* Philosophy Section */}
       <section className="relative py-24 lg:py-40 bg-white overflow-hidden">
-        {/* Faded Logo Background */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden">
+        {/* Faded Saffron Logo Background */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none overflow-hidden">
           <img 
-            src={SITE_CONFIG.logo} 
+            src="/popina-saffron-logo.png" 
             alt="" 
-            className="w-[80%] max-w-5xl h-auto grayscale" 
+            className="w-[80%] max-w-5xl h-auto" 
             aria-hidden="true"
           />
         </div>

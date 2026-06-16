@@ -24,6 +24,7 @@ import {
 
 import AboutPage from './components/AboutPage';
 import CelebrationsPage from './components/CelebrationsPage';
+import MenuPage from './components/MenuPage';
 import { SITE_CONFIG } from './site-config';
 
 // --- Constants & Types ---
@@ -32,6 +33,7 @@ const COLORS = SITE_CONFIG.colors;
 
 const NAV_LINKS = [
   { name: 'Reservations', href: '/reservations' },
+  { name: 'Menu', href: '/menu' },
   { name: 'Our Story', href: '/about' },
   { name: 'Celebrations', href: '/celebrations' },
   { name: 'Gift Card', href: '/gift-cards' },
@@ -301,7 +303,7 @@ const Footer = () => (
         <div id="footer-perks" className="bg-[#A49F86]/20 p-8 lg:p-12 border border-dark/5 flex flex-col justify-center max-w-md lg:max-w-none mx-auto lg:mx-0">
           <h4 className="text-2xl lg:text-3xl font-mono mb-6 text-dark/90 leading-tight">Enjoy exclusive perks, just for our community.</h4>
           <p className="text-dark/60 text-[11px] font-medium leading-[1.8] mb-10 tracking-wide">
-            Join our family for happy hours specials, first access to community events, and always in the know. No fees, just good times.
+            Join our family for happy hours specials, first access to community events and always in the know. No fees, just good times.
           </p>
           <button 
             className="w-full text-white py-5 rounded-sm text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-dark transition-all shadow-xl active:scale-[0.98]"
@@ -411,11 +413,11 @@ const Home = () => {
       {/* Intro Section */}
       <section id="intro" className="relative py-24 lg:py-40 overflow-hidden bg-white">
         {/* Faded Logo Background */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none overflow-hidden">
           <img 
-            src="/popina-logo.jpg" 
+            src="/popina-saffron-logo.png" 
             alt="" 
-            className="w-[80%] max-w-5xl h-auto grayscale" 
+            className="w-[80%] max-w-5xl h-auto" 
             aria-hidden="true"
           />
         </div>
@@ -503,7 +505,7 @@ const Home = () => {
               {SITE_CONFIG.home.features.menu.description}
             </p>
             <Link 
-              to="/reservations"
+              to="/menu"
               className="text-white w-full py-4 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-dark transition-all text-center"
               style={{ backgroundColor: COLORS.cta }}
             >
@@ -597,54 +599,41 @@ const Home = () => {
             <h2 className="text-4xl lg:text-6xl font-mono text-dark/90">Notes from the Table</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-dark/10 overflow-hidden border border-dark/10 shadow-2xl">
-            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-px">
-              {TESTIMONIALS.map((t, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-white p-12 lg:p-16 flex flex-col justify-between text-left group hover:bg-dark transition-colors duration-500"
-                >
-                  <div className="group-hover:text-white transition-colors">
-                    <div className="flex space-x-1 mb-8">
-                      {[...Array(t.rating)].map((_, i) => (
-                        <Star key={i} size={14} style={{ color: COLORS.cta, fill: COLORS.cta }} />
-                      ))}
-                    </div>
-                    <p className="text-xl font-mono italic font-light leading-relaxed mb-10">
-                      "{t.quote}"
-                    </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-dark/10 overflow-hidden border border-dark/10 shadow-2xl max-w-5xl mx-auto">
+            {TESTIMONIALS.map((t, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white p-12 lg:p-16 flex flex-col justify-between text-left group hover:bg-dark transition-colors duration-500"
+              >
+                <div className="group-hover:text-white transition-colors">
+                  <div className="flex space-x-1 mb-8">
+                    {[...Array(t.rating)].map((_, i) => (
+                      <Star key={i} size={14} style={{ color: COLORS.cta, fill: COLORS.cta }} />
+                    ))}
                   </div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] font-bold group-hover:text-white/60 transition-colors">
-                    <span className="text-dark group-hover:text-white">{t.author},</span>
-                    <span className="text-dark/40 ml-2">{t.source}</span>
-                  </div>
-                </motion.div>
-              ))}
-              
-              {/* Featured Food Image */}
-              <div className="bg-white overflow-hidden aspect-square md:aspect-auto h-80 md:h-auto border-t md:border-t-0 md:border-l border-dark/10 group">
-                <Image 
-                  src={SITE_CONFIG.images.foodView} 
-                  alt="A beautifully presented seasonal dish and a glass of wine, showcasing Popina's honest food and hospitality" 
-                  aspectRatio="w-full h-full"
-                  className="group-hover:scale-105 transition-transform duration-[3s]"
-                />
-              </div>
-            </div>
-
-            {/* Vertical Profile Image Overlay */}
-            <div className="lg:col-span-4 h-[600px] lg:h-auto relative group overflow-hidden">
+                  <p className="text-xl font-mono italic font-light leading-relaxed mb-10">
+                    "{t.quote}"
+                  </p>
+                </div>
+                <div className="text-[10px] uppercase tracking-[0.2em] font-bold group-hover:text-white/60 transition-colors">
+                  <span className="text-dark group-hover:text-white">{t.author},</span>
+                  <span className="text-dark/40 ml-2">{t.source}</span>
+                </div>
+              </motion.div>
+            ))}
+            
+            {/* Featured Food Image */}
+            <div className="bg-white overflow-hidden aspect-square h-80 md:h-auto border-t md:border-t-0 border-dark/10 group">
               <Image 
-                src={SITE_CONFIG.images.landscapeSouth} 
-                alt="Stunning southern landscape view from the Popina restaurant building, showing the iconic New Zealand rural scenery" 
+                src={SITE_CONFIG.images.foodView} 
+                alt="A beautifully presented seasonal dish and a glass of wine, showcasing Popina's honest food and hospitality" 
                 aspectRatio="w-full h-full"
                 className="group-hover:scale-105 transition-transform duration-[3s]"
               />
-              {/* Removed overlay text as requested */}
             </div>
           </div>
 
@@ -792,13 +781,14 @@ export default function App() {
   return (
     <Router>
       <ScrollToHash />
-      <div id="popina-app" className="bg-[#F5F2ED] text-dark font-sans selection:bg-[#FF583F]/30 antialiased min-h-screen flex flex-col">
+      <div id="popina-app" className="bg-[#F5F2ED] text-dark font-sans selection:bg-[#CC5300]/30 antialiased min-h-screen flex flex-col">
         <Navbar />
         
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/menu" element={<MenuPage />} />
             <Route path="/celebrations" element={<CelebrationsPage />} />
             <Route path="/reservations" element={<ReservationPage />} />
             <Route path="/gift-cards" element={<GiftCardPage />} />

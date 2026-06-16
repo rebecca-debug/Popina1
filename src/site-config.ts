@@ -13,7 +13,7 @@ export const SITE_CONFIG = {
     bg: '#F5F2ED',      // Warm off-white (Main background)
     dark: '#1C1C1C',    // Charcoal dark (Text and dark components)
     accent: '#A49F86',  // Muted sage
-    cta: '#FF583F',     // Vibrant Orange-Red (Call to Actions)
+    cta: '#CC5300',     // Orange (Call to Actions)
   },
 
   // --- BRANDING ---
@@ -38,13 +38,13 @@ export const SITE_CONFIG = {
   // --- HOME PAGE CONTENT ---
   home: {
     hero: {
-      topLabel: 'FOR LOCALS, FAMILIES, AND TRAVELERS',
+      topLabel: 'FOR LOCALS, FAMILIES AND TRAVELERS',
       headline: 'A relaxed rural restaurant serving honest food & genuine hospitality.',
     },
     welcome: {
       label: 'Welcome to Popina',
-      headline: 'Popina is a modern café and evening restaurant built around honest food, genuine hospitality, and respect for where good things come from.',
-      description: 'We’re creating a space where people can slow down, connect, and enjoy hospitality that feels thoughtful, comforting, and real.',
+      headline: 'Popina is a modern café and evening restaurant built around honest food, genuine hospitality and respect for where good things come from.',
+      description: 'We’re creating a space where people can slow down, connect and enjoy hospitality that feels thoughtful, comforting and real.',
       subDescription: 'A quick coffee, a long lunch, or dinner shared with friends.'
     },
     features: {
@@ -72,8 +72,8 @@ export const SITE_CONFIG = {
     hero: {
       label: 'The Land',
       headline: 'From dry land to something living.',
-      p1: 'For the past ten years, Brenda and Tony have been growing trees from seed and planting them across the property. Slowly, and with no grand performance. Just the work',
-      p2: 'The vision is simple: restore the land, make it productive, and let the place become part of the experience.',
+      p1: 'For the past ten years, Brenda and Tony have been growing trees from seed and planting them across the property. Slowly and with no grand performance. Just the work',
+      p2: 'The vision is simple: restore the land, make it productive and let the place become part of the experience.',
       quote: "Fruit trees. Garlic. Saffron. Gardens. Compost. Chickens. Eggs for baking. Food scraps are going back into the system.",
       p3: 'It is not sustainability as a slogan. It is a loop. A working, circular rhythm that starts with care for the land and comes back to the table.'
     },
@@ -83,15 +83,15 @@ export const SITE_CONFIG = {
     culinary: {
       label: 'Culinary Heart',
       headline: 'Our Food',
-      p1: 'Honest dishes, fresh, simple, and seasonal.',
-      p2: 'Our menus take gentle inspiration from the Mediterranean, shaped by local produce, thoughtful technique, and a love of food made to be shared. Everything is guided by simplicity, flavour, and care.'
+      p1: 'Honest dishes, fresh, simple and seasonal.',
+      p2: 'Our menus take gentle inspiration from the Mediterranean, shaped by local produce, thoughtful technique and a love of food made to be shared. Everything is guided by simplicity, flavour and care.'
     },
     hospitality: {
       label: 'Expertise',
       headline: 'Hospitality, with history behind it.',
       p1: 'Brenda and Tony are not new to feeding people. Before Popina, they spent more than 20 years running Wellington’s Ministry of Food, followed by a stint at Missy’s Kitchen in Wanaka.',
-      p2: 'Years of kitchens, service, regulars, early mornings, late finishes, and knowing exactly when a table needs attention and when it needs to be left alone.',
-      p3: 'Behind the scenes is a passionate team that cares deeply about hospitality, quality, and creating an experience that feels welcoming, relaxed, and genuine.',
+      p2: 'Years of kitchens, service, regulars, early mornings, late finishes and knowing exactly when a table needs attention and when it needs to be left alone.',
+      p3: 'Behind the scenes is a passionate team that cares deeply about hospitality, quality and creating an experience that feels welcoming, relaxed and genuine.',
       quote: "Popina is for people who like food that makes sense."
     },
     restaurant: {
@@ -113,12 +113,12 @@ export const SITE_CONFIG = {
     hero: {
       label: 'Exclusive Events',
       headline: 'Gatherings that feel generous.',
-      description: 'Popina is made for moments that matter. Exclusive use of the venue gives you the space to settle in, spread out, and make the place your own.'
+      description: 'Popina is made for moments that matter. Exclusive use of the venue gives you the space to settle in, spread out and make the place your own.'
     },
     details: {
       headline: 'Whether it is a long lunch, a milestone birthday, or a wedding welcome dinner.',
-      p1: 'The venue can host up to 80 guests seated or 120 guests cocktail-style, with plenty of room for good food, good wine, and the kind of conversation that gets better as the afternoon rolls on.',
-      p2: 'Food is served family-style to the table, designed for sharing. Generous, seasonal, and without too much fuss—exactly how we like to eat.',
+      p1: 'The venue can host up to 80 guests seated or 120 guests cocktail-style, with plenty of room for good food, good wine and the kind of conversation that gets better as the afternoon rolls on.',
+      p2: 'Food is served family-style to the table, designed for sharing. Generous, seasonal and without too much fuss—exactly how we like to eat.',
       p3: 'Menus and beverages can be customised to suit the occasion, from a relaxed shared feast to a more considered celebration with selected wines and local beers.'
     },
     testimonial: {
@@ -133,7 +133,16 @@ export const SITE_CONFIG = {
     enquiry: {
       label: 'The Enquiry',
       headline: 'Plan your perfect day.',
-      p1: 'Popina gives you the bones of a beautiful event: warm hospitality, honest food, a calm setting, and a team that knows how to make people feel well cared for.'
+      p1: 'Popina gives you the bones of a beautiful event: warm hospitality, honest food, a calm setting and a team that knows how to make people feel well cared for.'
+    }
+  },
+
+  // --- MENU PAGE CONTENT ---
+  menu: {
+    hero: {
+      label: 'On the Table',
+      headline: 'The Menu',
+      disclosure: 'Please note: our menu is subject to change due to seasonality, produce availability and pricing fluctuations. We cook with what is fresh, honest and available in the moment.'
     }
   },
 
@@ -149,6 +158,7 @@ export const SITE_CONFIG = {
     localSpot: '/popina-localspot.jpg',
     landscapeSouth: '/popina-southview.jpg',
     foodView: '/popina-view.jpg',
+    menu: '/popina-menu.jpg',
   },
 
   // --- EXTERNAL LINKS ---

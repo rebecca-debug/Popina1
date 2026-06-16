@@ -40,7 +40,7 @@ const CelebrationsPage = () => {
   };
 
   return (
-    <div className="bg-[#F5F2ED] selection:bg-[#FF583F]/30 antialiased">
+    <div className="bg-[#F5F2ED] selection:bg-[#CC5300]/30 antialiased">
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden border-b border-dark/5">
         <div className="max-w-7xl mx-auto px-6">
@@ -111,13 +111,13 @@ const CelebrationsPage = () => {
                 viewport={{ once: true }}
                 className="bg-[#F5F2ED] p-12 lg:p-16 rounded-sm relative overflow-hidden"
               >
-                <Quote className="absolute top-8 right-8 text-[#FF583F]/10 w-24 h-24" />
+                <Quote className="absolute top-8 right-8 text-[#CC5300]/10 w-24 h-24" />
                 <div className="relative z-10">
                   <p className="text-2xl lg:text-3xl font-script italic text-dark/80 mb-8 leading-relaxed">
                     {content.testimonial.quote}
                   </p>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-px bg-[#FF583F]" style={{ backgroundColor: COLORS.cta }} />
+                    <div className="w-12 h-px bg-[#CC5300]" style={{ backgroundColor: COLORS.cta }} />
                     <span className="uppercase tracking-widest text-[11px] font-extrabold text-dark/60">{content.testimonial.author}</span>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ const CelebrationsPage = () => {
                           required
                           type="text" 
                           placeholder="Full Name"
-                          className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#FF583F] focus:ring-4 focus:ring-[#FF583F]/10 focus:bg-white transition-all outline-none placeholder:text-dark/20 font-medium"
+                          className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#CC5300] focus:ring-4 focus:ring-[#CC5300]/10 focus:bg-white transition-all outline-none placeholder:text-dark/20 font-medium"
                           value={formData.name}
                           onChange={(e) => setFormData({...formData, name: e.target.value})}
                         />
@@ -237,7 +237,7 @@ const CelebrationsPage = () => {
                           required
                           type="email" 
                           placeholder="name@email.com"
-                          className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#FF583F] focus:ring-4 focus:ring-[#FF583F]/10 focus:bg-white transition-all outline-none placeholder:text-dark/20 font-medium"
+                          className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#CC5300] focus:ring-4 focus:ring-[#CC5300]/10 focus:bg-white transition-all outline-none placeholder:text-dark/20 font-medium"
                           value={formData.email}
                           onChange={(e) => setFormData({...formData, email: e.target.value})}
                         />
@@ -254,7 +254,7 @@ const CelebrationsPage = () => {
                           required
                           type="tel" 
                           placeholder="+64 --- --- ----"
-                          className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#FF583F] focus:ring-4 focus:ring-[#FF583F]/10 focus:bg-white transition-all outline-none placeholder:text-dark/20 font-medium"
+                          className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#CC5300] focus:ring-4 focus:ring-[#CC5300]/10 focus:bg-white transition-all outline-none placeholder:text-dark/20 font-medium"
                           value={formData.phone}
                           onChange={(e) => setFormData({...formData, phone: e.target.value})}
                         />
@@ -267,7 +267,7 @@ const CelebrationsPage = () => {
                         <input 
                           required
                           type="date" 
-                          className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#FF583F] focus:ring-4 focus:ring-[#FF583F]/10 focus:bg-white transition-all outline-none font-medium text-dark/60"
+                          className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#CC5300] focus:ring-4 focus:ring-[#CC5300]/10 focus:bg-white transition-all outline-none font-medium text-dark/60"
                           value={formData.date}
                           onChange={(e) => setFormData({...formData, date: e.target.value})}
                         />
@@ -283,7 +283,7 @@ const CelebrationsPage = () => {
                         required
                         type="number" 
                         placeholder="e.g. 50"
-                        className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#FF583F] focus:ring-4 focus:ring-[#FF583F]/10 focus:bg-white transition-all outline-none placeholder:text-dark/20 font-medium"
+                        className="w-full bg-[#F5F2ED] border border-transparent text-dark p-4 pl-12 rounded-sm focus:border-[#CC5300] focus:ring-4 focus:ring-[#CC5300]/10 focus:bg-white transition-all outline-none placeholder:text-dark/20 font-medium"
                         value={formData.guests}
                         onChange={(e) => setFormData({...formData, guests: e.target.value})}
                       />
