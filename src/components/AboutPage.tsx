@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ArrowRight } from 'lucide-react';
-import { SITE_CONFIG, getAssetUrl } from '../site-config';
+import { SITE_CONFIG } from '../site-config';
 
 const AboutPage = () => {
   const COLORS = SITE_CONFIG.colors;
@@ -93,7 +93,7 @@ const AboutPage = () => {
           >
             <div className="flex justify-center mb-10">
               <img 
-                src={getAssetUrl('/popina_saffron_logo.png?v=5')} 
+                src="/popina_saffron_logo.png?v=5" 
                 alt="Popina Saffron Logo" 
                 className="h-28 md:h-36 w-auto object-contain"
               />
