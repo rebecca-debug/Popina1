@@ -17,7 +17,7 @@ export const SITE_CONFIG = {
   },
 
   // --- BRANDING ---
-  logo: '/popina-logo.jpg',
+  logo: '/popina-logo.png?v=5',
   brandName: 'POPINA',
   tagline: 'A relaxed rural restaurant serving honest food & genuine hospitality.',
   trustBadge: '5-Star Google Reviews',
@@ -72,7 +72,7 @@ export const SITE_CONFIG = {
     hero: {
       label: 'The Land',
       headline: 'From dry land to something living.',
-      p1: 'For the past ten years, Brenda and Tony have been growing trees from seed and planting them across the property. Slowly and with no grand performance. Just the work',
+      p1: 'For the past ten years, Brenda and Tony have been growing trees from seed and planting them across the property.',
       p2: 'The vision is simple: restore the land, make it productive and let the place become part of the experience.',
       quote: "Fruit trees. Garlic. Saffron. Gardens. Compost. Chickens. Eggs for baking. Food scraps are going back into the system.",
       p3: 'It is not sustainability as a slogan. It is a loop. A working, circular rhythm that starts with care for the land and comes back to the table.'
@@ -148,17 +148,19 @@ export const SITE_CONFIG = {
 
   // --- IMAGE PATHS (Update these if you upload new files) ---
   images: {
-    hero: '/popina-hero.jpg',
-    aboutHero1: '/popina-honey.jpg',
-    aboutHero2: '/popina-saffron.jpg',
-    aboutHero3: '/Popina-Food.jpg',
-    aboutHero4: '/popina-preserve-3507.jpg',
-    restaurantInterior: '/popina-restaurant.jpg',
-    ambientHero: '/popina-hero1.jpg',
-    localSpot: '/popina-localspot.jpg',
-    landscapeSouth: '/popina-southview.jpg',
-    foodView: '/popina-view.jpg',
-    menu: '/popina-menu.jpg',
+    hero: '/popina-hero.jpg?v=5',
+    aboutHero1: '/popina-honey.jpg?v=6',
+    aboutHero2: '/popina-saffron.jpg?v=5',
+    aboutHero3: '/Popina-Food.jpg?v=5',
+    aboutHero4: '/popina-preserve-3507.jpg?v=5',
+    restaurantInterior: '/popina-restaurant.jpg?v=5',
+    ambientHero: '/popina-hero1.jpg?v=5',
+    localSpot: '/popina-localspot.jpg?v=5',
+    landscapeSouth: '/popina-southview.jpg?v=5',
+    foodView: '/popina-view.jpg?v=5',
+    menu: '/popina-menu.jpg?v=6',
+    wedding: '/popina-wedding.jpg?v=5',
+    hospo: '/popina-hospo.jpg?v=5',
   },
 
   // --- EXTERNAL LINKS ---

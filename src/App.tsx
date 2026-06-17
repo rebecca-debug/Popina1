@@ -412,14 +412,18 @@ const Home = () => {
 
       {/* Intro Section */}
       <section id="intro" className="relative py-24 lg:py-40 overflow-hidden bg-white">
-        {/* Faded Logo Background */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none overflow-hidden">
-          <img 
-            src="/popina-saffron-logo.png" 
-            alt="" 
-            className="w-[80%] max-w-5xl h-auto" 
-            aria-hidden="true"
-          />
+        {/* Faded Logo Background (Pure Vector) */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.035] pointer-events-none select-none overflow-hidden">
+          <svg className="w-[85%] max-w-4xl h-auto text-[#5A5A40]" viewBox="0 0 500 500" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M250 400c-82.8 0-150-67.2-150-150S167.2 100 250 100s150 67.2 150 150-67.2 150-150 150z" className="opacity-10" fill="currentColor" />
+            <path d="M150 250a100 100 0 0 1 100-100m100 100a100 100 0 0 1-100 100" strokeWidth="2" strokeDasharray="3 3" />
+            <path d="M250 80c40 0 75 30 75 70s-35 70-75 70-75-30-75-70 35-70 75-70z" className="opacity-5" fill="currentColor" />
+            <text x="250" y="245" textAnchor="middle" className="font-serif text-[44px] tracking-[0.35em] font-light" fill="currentColor">POPINA</text>
+            <text x="250" y="280" textAnchor="middle" className="font-sans text-[10px] tracking-[0.5em] uppercase font-semibold" fill="currentColor">EST. 2026</text>
+            <text x="250" y="305" textAnchor="middle" className="font-sans text-[8px] tracking-[0.4em] uppercase" fill="currentColor">QUEENSBERRY</text>
+            <path d="M160 210c-5-10-15-15-25-10s-10 15-5 25M340 210c5-10 15-15 25-10s10 15 5 25" fill="currentColor" />
+            <path d="M190 160c-2-12-10-20-20-18s-12 12-10 24M310 160c2-12 10-20 20-18s12 12 10 24" fill="currentColor" />
+          </svg>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -429,6 +433,13 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex justify-center mb-10">
+              <img 
+                src="/popina_saffron_logo.png?v=5" 
+                alt="Popina Saffron Logo" 
+                className="h-28 md:h-36 w-auto object-contain"
+              />
+            </div>
             <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-8" style={{ color: COLORS.cta }}>{SITE_CONFIG.home.welcome.label}</span>
             <h2 className="text-3xl lg:text-6xl font-script italic text-dark/90 leading-tight mb-12">
               {SITE_CONFIG.home.welcome.headline}

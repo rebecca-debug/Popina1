@@ -150,7 +150,7 @@ const CelebrationsPage = () => {
                 </div>
               </div>
               <div className="aspect-square rounded-sm overflow-hidden shadow-xl">
-                 <img src={images.localSpot} alt="Local gathering" className="w-full h-full object-cover" />
+                 <img src={images.wedding} alt="Wedding celebrations at Popina" className="w-full h-full object-cover" />
               </div>
             </motion.div>
           </div>
