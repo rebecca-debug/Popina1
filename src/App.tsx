@@ -25,7 +25,7 @@ import {
 import AboutPage from './components/AboutPage';
 import CelebrationsPage from './components/CelebrationsPage';
 import MenuPage from './components/MenuPage';
-import { SITE_CONFIG } from './site-config';
+import { SITE_CONFIG, getAssetUrl } from './site-config';
 
 // --- Constants & Types ---
 
@@ -123,7 +123,6 @@ const Image = ({
         onError={() => setError(true)}
         loading={priority ? 'eager' : 'lazy'}
         className="w-full h-full object-cover"
-        referrerPolicy="no-referrer"
       />
     </div>
   );
@@ -135,7 +134,6 @@ const Logo = () => (
       src={SITE_CONFIG.logo} 
       alt={`${SITE_CONFIG.brandName} - Relaxed Rural Restaurant in Queensberry`} 
       className="h-14 lg:h-18 w-auto object-contain transition-transform group-hover:scale-105"
-      referrerPolicy="no-referrer"
       onError={(e) => {
         // Fallback placeholder if image is not found
         (e.target as HTMLImageElement).src = "https://placehold.co/200x80/1c1c1c/ffffff?text=POPINA";
@@ -435,7 +433,7 @@ const Home = () => {
           >
             <div className="flex justify-center mb-10">
               <img 
-                src="/popina_saffron_logo.png?v=5" 
+                src={getAssetUrl('/popina_saffron_logo.png?v=5')} 
                 alt="Popina Saffron Logo" 
                 className="h-28 md:h-36 w-auto object-contain"
               />

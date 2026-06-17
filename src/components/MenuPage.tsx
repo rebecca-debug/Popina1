@@ -97,7 +97,6 @@ const MenuPage = () => {
                 className={`mx-auto h-auto transition-all duration-300 rounded-sm ${
                   isZoomed ? 'w-[150%] max-w-none md:w-[120%]' : 'w-full max-w-4xl'
                 }`}
-                referrerPolicy="no-referrer"
               />
             </div>
 

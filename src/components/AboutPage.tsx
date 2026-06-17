@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ArrowRight } from 'lucide-react';
-import { SITE_CONFIG } from '../site-config';
+import { SITE_CONFIG, getAssetUrl } from '../site-config';
 
 const AboutPage = () => {
   const COLORS = SITE_CONFIG.colors;
@@ -48,18 +48,18 @@ const AboutPage = () => {
               <div className="grid grid-cols-2 gap-6 scale-95 lg:scale-100">
                 <div className="space-y-6 pt-12">
                   <div className="aspect-[3/4] rounded-sm overflow-hidden shadow-lg transform -rotate-2">
-                    <img src={images.aboutHero1} alt="Beehives at Popina" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src={images.aboutHero1} alt="Beehives at Popina" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-lg transform rotate-1">
-                    <img src={images.aboutHero2} alt="Saffron harvest" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src={images.aboutHero2} alt="Saffron harvest" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div className="space-y-6">
                   <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-lg transform rotate-2">
-                    <img src={images.aboutHero3} alt="Fresh zucchini and saffron" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src={images.aboutHero3} alt="Fresh zucchini and saffron" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-[3/4] rounded-sm overflow-hidden shadow-lg transform -rotate-1">
-                    <img src={images.aboutHero4} alt="Preserved garden produce" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src={images.aboutHero4} alt="Preserved garden produce" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -93,7 +93,7 @@ const AboutPage = () => {
           >
             <div className="flex justify-center mb-10">
               <img 
-                src="/popina_saffron_logo.png?v=5" 
+                src={getAssetUrl('/popina_saffron_logo.png?v=5')} 
                 alt="Popina Saffron Logo" 
                 className="h-28 md:h-36 w-auto object-contain"
               />
@@ -140,7 +140,6 @@ const AboutPage = () => {
                 src={images.hospo} 
                 alt="Culinary heart and hospitality of Popina" 
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
           </div>
@@ -167,7 +166,6 @@ const AboutPage = () => {
                 src={images.restaurantInterior} 
                 alt="Inside Popina Restaurant" 
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
             <motion.div 
@@ -215,7 +213,7 @@ const AboutPage = () => {
               transition={{ duration: 1 }}
               className="relative aspect-video lg:aspect-[4/5] rounded-sm overflow-hidden shadow-2xl group"
             >
-              <img src={images.ambientHero} alt="Popina restaurant ambience" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[5s]" referrerPolicy="no-referrer" />
+              <img src={images.ambientHero} alt="Popina restaurant ambience" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[5s]" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}

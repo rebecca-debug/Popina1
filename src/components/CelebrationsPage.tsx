@@ -69,7 +69,6 @@ const CelebrationsPage = () => {
                 src={images.landscapeSouth} 
                 alt="Popina Event Setting" 
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/20 to-transparent" />
             </motion.div>
