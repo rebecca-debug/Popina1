@@ -28,7 +28,7 @@ export const SITE_CONFIG = {
   },
 
   // --- BRANDING ---
-  logo: '/popina-logo.png?v=5',
+  logo: '/popina-logo.jpg?v=7',
   brandName: 'POPINA',
   tagline: 'A relaxed rural restaurant serving honest food & genuine hospitality.',
   trustBadge: '5-Star Google Reviews',
