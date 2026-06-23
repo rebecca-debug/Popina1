@@ -159,7 +159,7 @@ export const SITE_CONFIG = {
 
   // --- IMAGE PATHS (Update these if you upload new files) ---
   images: {
-    hero: '/popina-hero.jpg?v=5',
+    hero: '/popina-hero.jpg?v=6',
     aboutHero1: '/popina-honey.jpg?v=6',
     aboutHero2: '/popina-saffron.jpg?v=5',
     aboutHero3: '/Popina-Food.jpg?v=5',
@@ -171,7 +171,7 @@ export const SITE_CONFIG = {
     foodView: '/popina-view.jpg?v=5',
     menu: '/popina-menu.jpg?v=6',
     wedding: '/popina-wedding.jpg?v=5',
-    hospo: '/popina-hospo.jpg?v=5',
+    hospo: '/popina-hospo.jpg?v=6',
   },
 
   // --- EXTERNAL LINKS ---
