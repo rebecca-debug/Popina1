@@ -159,7 +159,7 @@ export const SITE_CONFIG = {
 
   // --- IMAGE PATHS (Update these if you upload new files) ---
   images: {
-    hero: '/popina-hero.jpg?v=6',
+    hero: '/popina-hero.jpg?v=7',
     aboutHero1: '/popina-honey.jpg?v=6',
     aboutHero2: '/popina-saffron.jpg?v=6',
     aboutHero3: '/Popina-Food.jpg?v=6',
