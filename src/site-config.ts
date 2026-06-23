@@ -161,9 +161,9 @@ export const SITE_CONFIG = {
   images: {
     hero: '/popina-hero.jpg?v=6',
     aboutHero1: '/popina-honey.jpg?v=6',
-    aboutHero2: '/popina-saffron.jpg?v=5',
-    aboutHero3: '/Popina-Food.jpg?v=5',
-    aboutHero4: '/popina-preserve-3507.jpg?v=5',
+    aboutHero2: '/popina-saffron.jpg?v=6',
+    aboutHero3: '/Popina-Food.jpg?v=6',
+    aboutHero4: '/popina-preserve-3507.jpg?v=6',
     restaurantInterior: '/popina-restaurant.jpg?v=5',
     ambientHero: '/popina-hero1.jpg?v=5',
     localSpot: '/popina-localspot.jpg?v=5',
