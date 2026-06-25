@@ -55,7 +55,7 @@ export const SITE_CONFIG = {
     welcome: {
       label: 'Welcome to Popina',
       headline: 'Popina is a modern café and evening restaurant built around honest food, genuine hospitality and respect for where good things come from.',
-      description: 'We’re creating a space where people can slow down, connect and enjoy hospitality that feels thoughtful, comforting and real.',
+      description: 'We’ve created a space where people can slow down, connect and enjoy hospitality that feels thoughtful, comforting and real.',
       subDescription: 'A quick coffee, a long lunch, or dinner shared with friends.'
     },
     features: {
@@ -108,7 +108,7 @@ export const SITE_CONFIG = {
     restaurant: {
       label: 'The Restaurant',
       headline: 'A restaurant with room to breathe.',
-      p1: 'Seasonal produce. Proper ingredients. Simple cooking done with care. Drinks chosen with the same thought.',
+      p1: 'Seasonal produce. Thoughtfully selected local wines and beers. Simple cooking crafted with care. A cocktail list with the seasons in mind.',
       p2: 'A room where people can relax, talk, laugh, bring the family, park the boat, pull in with the horse float, or stop in after driving through Central Otago.',
       list: [
         'A place for locals.',
