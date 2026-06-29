@@ -12,7 +12,7 @@ import {
   MapPin, 
   UtensilsCrossed, 
   Calendar, 
-  Info, 
+  Sparkles, 
   Wine, 
   Instagram, 
   Facebook,
@@ -325,16 +325,17 @@ const Footer = () => (
 
 const Home = () => {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 100]); // Subtler parallax
+  // Elegant upward parallax transform to bring more of the beautiful building into view as we scroll down
+  const y1 = useTransform(scrollY, [0, 800], [0, -120]); 
 
   return (
     <>
       {/* Hero Section */}
-      <header id="hero" className="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+      <header id="hero" className="relative w-full h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
         {/* Background Image Container with Parallax */}
         <motion.div 
           style={{ y: y1 }}
-          className="absolute inset-0 z-0 h-[120%]" // Ensure it's taller for parallax
+          className="absolute -top-[15%] left-0 right-0 z-0 h-[140%]" // Height expanded with offset to keep building perfectly framed
         >
           <Image 
             src={SITE_CONFIG.images.hero} 
@@ -345,9 +346,6 @@ const Home = () => {
             delay={0.8} // Fade in after text starts
             fallbackSrc="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=2070"
           />
-          {/* Sophisticated darkened overlay for legibility */}
-          <div className="absolute inset-0 bg-dark/25 backdrop-blur-[1px] transition-all duration-1000" />
-          <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-transparent to-dark/40" />
         </motion.div>
 
         {/* Hero Content */}
@@ -508,7 +506,7 @@ const Home = () => {
             whileHover={{ y: -8 }}
             className="bg-white p-10 px-12 flex flex-col items-center text-center justify-center border border-dark/5 shadow-sm"
           >
-            <UtensilsCrossed size={40} className="mb-8" style={{ color: COLORS.cta }} />
+            <UtensilsCrossed size={42} strokeWidth={1.5} className="mb-8" style={{ color: COLORS.cta, filter: 'url(#hand-drawn-filter)' }} />
             <h3 className="text-2xl font-mono mb-6">{SITE_CONFIG.home.features.menu.title}</h3>
             <p className="text-dark/50 text-sm mb-10 leading-relaxed font-medium">
               {SITE_CONFIG.home.features.menu.description}
@@ -530,9 +528,9 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             whileHover={{ y: -8 }}
-            className="bg-[#E9E5DE] p-10 px-12 flex flex-col items-center text-center justify-center shadow-sm"
+            className="bg-white p-10 px-12 flex flex-col items-center text-center justify-center border border-dark/5 shadow-sm"
           >
-            <Calendar size={40} className="mb-8" style={{ color: COLORS.cta }} />
+            <Calendar size={42} strokeWidth={1.5} className="mb-8" style={{ color: COLORS.cta, filter: 'url(#hand-drawn-filter)' }} />
             <h3 className="text-2xl font-mono mb-6">{SITE_CONFIG.home.features.booking.title}</h3>
             <p className="text-dark/50 text-sm mb-10 leading-relaxed font-medium">
               {SITE_CONFIG.home.features.booking.description}
@@ -557,9 +555,9 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ y: -8 }}
-            className="bg-[#E9E5DE] p-10 px-12 flex flex-col items-center text-center justify-center shadow-sm"
+            className="bg-white p-10 px-12 flex flex-col items-center text-center justify-center border border-dark/5 shadow-sm"
           >
-            <Info size={40} className="mb-8" style={{ color: COLORS.cta }} />
+            <Sparkles size={42} strokeWidth={1.5} className="mb-8" style={{ color: COLORS.cta, filter: 'url(#hand-drawn-filter)' }} />
             <h3 className="text-2xl font-mono mb-6">{SITE_CONFIG.home.features.events.title}</h3>
             <p className="text-dark/50 text-sm mb-10 leading-relaxed font-medium">
               {SITE_CONFIG.home.features.events.description}
@@ -579,7 +577,7 @@ const Home = () => {
             whileHover={{ y: -8 }}
             className="bg-white p-10 px-12 flex flex-col items-center text-center justify-center border border-dark/5 shadow-sm"
           >
-            <Wine size={40} className="mb-8" style={{ color: COLORS.cta }} />
+            <Wine size={42} strokeWidth={1.5} className="mb-8" style={{ color: COLORS.cta, filter: 'url(#hand-drawn-filter)' }} />
             <h3 className="text-2xl font-mono mb-6">{SITE_CONFIG.home.features.celebrations.title}</h3>
             <p className="text-dark/50 text-sm mb-10 leading-relaxed font-medium">
               {SITE_CONFIG.home.features.celebrations.description}
@@ -791,6 +789,16 @@ export default function App() {
     <Router>
       <ScrollToHash />
       <div id="popina-app" className="bg-[#F5F2ED] text-dark font-sans selection:bg-[#CC5300]/30 antialiased min-h-screen flex flex-col">
+        {/* SVG Filter for hand-drawn look */}
+        <svg className="absolute w-0 h-0 pointer-events-none select-none" style={{ position: 'absolute', width: 0, height: 0 }}>
+          <defs>
+            <filter id="hand-drawn-filter" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+          </defs>
+        </svg>
+
         <Navbar />
         
         <main className="flex-grow">
