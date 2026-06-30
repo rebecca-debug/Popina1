@@ -28,7 +28,7 @@ export const SITE_CONFIG_BACKUP = {
   },
 
   // --- BRANDING ---
-  logo: '/popina-logo.png?v=5',
+  logo: '/popina-logo.jpg',
   brandName: 'POPINA',
   tagline: 'A relaxed rural restaurant serving honest food & genuine hospitality.',
   trustBadge: '5-Star Google Reviews',
@@ -150,19 +150,19 @@ export const SITE_CONFIG_BACKUP = {
 
   // --- IMAGE PATHS (Update these if you upload new files) ---
   images: {
-    hero: '/popina-hero.jpg?v=5',
+    hero: '/popina-hero.jpg?v=6',
     aboutHero1: '/popina-honey.jpg?v=6',
-    aboutHero2: '/popina-saffron.jpg?v=5',
-    aboutHero3: '/Popina-Food.jpg?v=5',
-    aboutHero4: '/popina-preserve-3507.jpg?v=5',
-    restaurantInterior: '/popina-restaurant.jpg?v=5',
-    ambientHero: '/popina-hero1.jpg?v=5',
-    localSpot: '/popina-localspot.jpg?v=5',
-    landscapeSouth: '/popina-southview.jpg?v=5',
-    foodView: '/popina-view.jpg?v=5',
+    aboutHero2: '/popina-saffron.jpg?v=6',
+    aboutHero3: '/Popina-Food.jpg?v=6',
+    aboutHero4: '/popina-preserve-3507.jpg?v=6',
+    restaurantInterior: '/popina-restaurant.jpg?v=6',
+    ambientHero: '/popina-hero1.jpg?v=6',
+    localSpot: '/popina-localspot.jpg?v=6',
+    landscapeSouth: '/popina-southview.jpg?v=6',
+    foodView: '/popina-view.jpg?v=6',
     menu: '/popina-menu.jpg?v=6',
-    wedding: '/popina-wedding.jpg?v=5',
-    hospo: '/popina-hospo.jpg?v=5',
+    wedding: '/popina-wedding.jpg?v=6',
+    hospo: '/popina-hospo.jpg?v=6',
   },
 
   // --- EXTERNAL LINKS ---
