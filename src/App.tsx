@@ -709,16 +709,19 @@ const ReservationPage = () => {
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
            <div>
-             <h3 className="text-2xl font-mono mb-4">Groups & Celebrations</h3>
-              <p className="text-dark/60 text-sm leading-relaxed mb-6">
-                For groups larger than 12 or to talk to us about hosting your next private event, please view our celebrations page or get in touch on {SITE_CONFIG.contact.phone}
-              </p>
+             <h3 className="text-2xl font-mono mb-4">Groups & Private Events</h3>
+             <p className="text-dark/60 text-sm leading-relaxed mb-4">
+               For groups larger than 12, please phone <a href="tel:+64274110697" className="underline font-semibold hover:text-[#CC5300] transition-colors">+64 274 110 697</a> during opening hours 11 am - 7:30 pm Thursday to Sunday.
+             </p>
+             <p className="text-dark/60 text-sm leading-relaxed mb-6">
+               Or email us <a href="mailto:info@popina.co.nz" className="underline font-semibold hover:text-[#CC5300] transition-colors">info@popina.co.nz</a> with your group booking details or to enquire about hosting your next private event. For more information please view our <Link to="/celebrations" className="underline font-semibold hover:text-[#CC5300] transition-colors">celebrations page</Link>.
+             </p>
              <Link 
                to="/celebrations"
                className="font-bold uppercase tracking-[0.2em] text-[10px] flex items-center gap-2 hover:gap-3 transition-all mx-auto md:mx-0"
                style={{ color: COLORS.cta }}
              >
-               View Celebrations <ChevronRight size={14} />
+               View Celebrations & Events <ChevronRight size={14} />
              </Link>
            </div>
            <div>
