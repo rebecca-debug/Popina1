@@ -93,7 +93,7 @@ const AboutPage = () => {
           >
             <div className="flex justify-center mb-10">
               <img 
-                src="/popina_saffron_logo.jpg?v=8" 
+                src="src="/popina_saffron_logo.jpg?v=8" 
                 alt="Popina Saffron Logo" 
                 className="h-28 md:h-36 w-auto object-contain"
               />
