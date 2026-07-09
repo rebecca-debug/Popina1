@@ -86,7 +86,7 @@ export const SITE_CONFIG = {
       p1: 'For the past ten years, Brenda and Tony have been restoring the Pukerangi land — planting trees, building soil health, and developing productive gardens, orchards, and groves across the property.',
 p2: 'Their vision is simple: restore the land, make it productive, and let it become an integral part of the Popina experience. The Productive Patch supplies saffron, garlic, vegetables and herbs, alongside a heritage cider apple orchard, olive grove, feijoas and nut trees.',
 quote: "Fruit trees. Garlic. Saffron. Gardens. Compost. Chickens. Eggs for baking. Food scraps. More compost. Soil fertility. And around we go again.",
-p3: 'This isn't sustainability as a slogan. It's a working cycle — where care for the land comes back through the kitchen, and ultimately becomes part of the experience at Popina.'
+p3: "This isn't sustainability as a slogan. It's a working cycle — where care for the land comes back through the kitchen, and ultimately becomes part of the experience at Popina."
     },
     philosophy: {
       quote: "A community oasis, grown from the ground up."
@@ -108,7 +108,7 @@ p3: 'This isn't sustainability as a slogan. It's a working cycle — where care 
     restaurant: {
       label: 'The Restaurant',
       headline: 'A restaurant with room to breathe.',
-      p1: 'p1: 'Seasonal produce. Thoughtfully selected local wines and beers. Simple cooking crafted with care. Cocktails and great coffee chosen with the same thinking.',
+      p1: 'Seasonal produce. Thoughtfully selected local wines and beers. Simple cooking crafted with care. Cocktails and great coffee chosen with the same thinking.',
       p2: 'A room where people can relax, talk, laugh, bring the family, park the boat, pull in with the horse float, or stop in after driving through Central Otago.',
       list: [
         'A place for locals.',
