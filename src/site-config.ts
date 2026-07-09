@@ -1,15 +1,7 @@
 /**
  * POPINA SITE CONFIGURATION
- * 
- * This file centralizes all the 'copy' (text), image paths, and colors 
- * for the website. To make changes to the content or visual style, 
- * you or a collaborator can edit the values below.
  */
 
-/**
- * Helper to resolve public assets relative to Vite's configured base URL.
- * This guarantees proper loading on any environment (Netlify previews, root domain, subdirectories, etc.)
- */
 export const getAssetUrl = (path: string): string => {
   const base = (import.meta as any).env?.BASE_URL || '/';
   const cleanBase = base.endsWith('/') ? base : `${base}/`;
@@ -18,22 +10,19 @@ export const getAssetUrl = (path: string): string => {
 };
 
 export const SITE_CONFIG = {
-  // --- VISUAL IDENTITY (Colors) ---
   colors: {
-    primary: '#5A5A40', // Olive green (e.g. Buttons, highlights)
-    bg: '#F5F2ED',      // Warm off-white (Main background)
-    dark: '#1C1C1C',    // Charcoal dark (Text and dark components)
-    accent: '#A49F86',  // Muted sage
-    cta: '#CC5300',     // Orange (Call to Actions)
+    primary: '#5A5A40',
+    bg: '#F5F2ED',
+    dark: '#1C1C1C',
+    accent: '#A49F86',
+    cta: '#CC5300',
   },
 
-  // --- BRANDING ---
   logo: '/popina-logo.jpg?v=9',
   brandName: 'POPINA',
   tagline: 'A relaxed rural restaurant serving honest food & genuine hospitality.',
   trustBadge: '5-Star Google Reviews',
 
-  // --- CONTACT & BUSINESS INFO ---
   contact: {
     address: '26 Pukerangi Drive, Queensberry 9383',
     phone: '+64 274 110 697',
@@ -46,7 +35,6 @@ export const SITE_CONFIG = {
     }
   },
 
-  // --- HOME PAGE CONTENT ---
   home: {
     hero: {
       topLabel: 'FOR LOCALS, FAMILIES AND TRAVELERS',
@@ -55,7 +43,7 @@ export const SITE_CONFIG = {
     welcome: {
       label: 'Welcome to Popina',
       headline: 'Popina is a modern café and evening restaurant built around honest food, genuine hospitality and respect for where good things come from.',
-      description: 'We’ve creating a space where people can slow down, connect and enjoy hospitality that feels thoughtful, comforting and real.',
+      description: "We've created a space where people can slow down, connect and enjoy hospitality that feels thoughtful, comforting and real.",
       subDescription: 'A quick coffee, a long lunch, or dinner shared with friends.'
     },
     features: {
@@ -78,15 +66,14 @@ export const SITE_CONFIG = {
     }
   },
 
-  // --- ABOUT PAGE CONTENT ---
   about: {
     hero: {
       label: 'The Land',
       headline: 'From dry land to something living.',
       p1: 'For the past ten years, Brenda and Tony have been restoring the Pukerangi land — planting trees, building soil health, and developing productive gardens, orchards, and groves across the property.',
-p2: 'Their vision is simple: restore the land, make it productive, and let it become an integral part of the Popina experience. The Productive Patch supplies saffron, garlic, vegetables and herbs, alongside a heritage cider apple orchard, olive grove, feijoas and nut trees.',
-quote: "Fruit trees. Garlic. Saffron. Gardens. Compost. Chickens. Eggs for baking. Food scraps. More compost. Soil fertility. And around we go again.",
-p3: "This isn't sustainability as a slogan. It's a working cycle — where care for the land comes back through the kitchen, and ultimately becomes part of the experience at Popina.",
+      p2: 'Their vision is simple: restore the land, make it productive, and let it become an integral part of the Popina experience. The Productive Patch supplies saffron, garlic, vegetables and herbs, alongside a heritage cider apple orchard, olive grove, feijoas and nut trees.',
+      quote: "Fruit trees. Garlic. Saffron. Gardens. Compost. Chickens. Eggs for baking. Food scraps. More compost. Soil fertility. And around we go again.",
+      p3: "This isn't sustainability as a slogan. It's a working cycle — where care for the land comes back through the kitchen, and ultimately becomes part of the experience at Popina.",
     },
     philosophy: {
       quote: "A community oasis, grown from the ground up."
@@ -100,7 +87,7 @@ p3: "This isn't sustainability as a slogan. It's a working cycle — where care 
     hospitality: {
       label: 'Expertise',
       headline: 'Hospitality, with history behind it.',
-      p1: 'Brenda and Tony are not new to feeding people. Before Popina, they spent more than 20 years running Wellington’s Ministry of Food, followed by a stint at Missy’s Kitchen in Wanaka.',
+      p1: "Brenda and Tony are not new to feeding people. Before Popina, they spent more than 20 years running Wellington's Ministry of Food, followed by a stint at Missy's Kitchen in Wanaka.",
       p2: 'Years of kitchens, service, regulars, early mornings, late finishes and knowing exactly when a table needs attention and when it needs to be left alone.',
       p3: 'Behind the scenes is a passionate team that cares deeply about hospitality, quality and creating an experience that feels welcoming, relaxed and genuine.',
       quote: "Popina is for people who like food that makes sense."
@@ -108,7 +95,7 @@ p3: "This isn't sustainability as a slogan. It's a working cycle — where care 
     restaurant: {
       label: 'The Restaurant',
       headline: 'A restaurant with room to breathe.',
-      p1: 'p1: 'Seasonal produce. Thoughtfully selected local wines and beers. Simple cooking crafted with care. Cocktails and great coffee chosen with the same thinking.',
+      p1: 'Seasonal produce. Thoughtfully selected local wines and beers. Simple cooking crafted with care. Cocktails and great coffee chosen with the same thinking.',
       p2: 'A room where people can relax, talk, laugh, bring the family, park the boat, pull in with the horse float, or stop in after driving through Central Otago.',
       list: [
         'A place for locals.',
@@ -119,7 +106,6 @@ p3: "This isn't sustainability as a slogan. It's a working cycle — where care 
     }
   },
 
-  // --- CELEBRATIONS CONTENT ---
   celebrations: {
     hero: {
       label: 'Exclusive Events',
@@ -129,11 +115,11 @@ p3: "This isn't sustainability as a slogan. It's a working cycle — where care 
     details: {
       headline: 'Whether it is a long lunch, a milestone birthday, or a wedding welcome dinner.',
       p1: 'The venue can host up to 80 guests seated or 120 guests cocktail-style, with plenty of room for good food, good wine and the kind of conversation that gets better as the afternoon rolls on.',
-      p2: 'Food is served family-style to the table, designed for sharing. Generous, seasonal and without too much fuss—exactly how we like to eat.',
+      p2: 'Food is served family-style to the table, designed for sharing. Generous, seasonal and without too much fuss — exactly how we like to eat.',
       p3: 'Menus and beverages can be customised to suit the occasion, from a relaxed shared feast to a more considered celebration with selected wines and local beers.'
     },
     testimonial: {
-      quote: "“What can I say, your Team smashed Saturday out of the park!!!! The venue, the service, the food, just everything was faultless. Our day could not have been more wonderful.”",
+      quote: "What can I say, your Team smashed Saturday out of the park!!!! The venue, the service, the food, just everything was faultless. Our day could not have been more wonderful.",
       author: "Tracey Henderson — May 2026"
     },
     sidebar: {
@@ -148,7 +134,6 @@ p3: "This isn't sustainability as a slogan. It's a working cycle — where care 
     }
   },
 
-  // --- MENU PAGE CONTENT ---
   menu: {
     hero: {
       label: 'On the Table',
@@ -157,7 +142,6 @@ p3: "This isn't sustainability as a slogan. It's a working cycle — where care 
     }
   },
 
-  // --- IMAGE PATHS (Update these if you upload new files) ---
   images: {
     hero: '/popina-hero.jpg?v=10',
     aboutHero1: '/popina-honey.jpg?v=9',
@@ -169,12 +153,11 @@ p3: "This isn't sustainability as a slogan. It's a working cycle — where care 
     localSpot: '/popina-localspot.jpg?v=9',
     landscapeSouth: '/popina-southview.jpg?v=9',
     foodView: '/popina-view.jpg?v=9',
-    menu: '/0905 menu .jpg',
+    menu: '/popina-menu.jpg?v=9',
     wedding: '/popina-wedding.jpg?v=9',
     hospo: '/popina-hospo.jpg?v=9',
   },
 
-  // --- EXTERNAL LINKS ---
   links: {
     instagram: 'https://www.instagram.com/popina_queensberry',
     googleReviews: 'https://www.google.com/search?q=Popina+Reviews',
