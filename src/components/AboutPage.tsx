@@ -237,9 +237,6 @@ const AboutPage = () => {
                     </div>
                   ))}
                 </div>
-                <p className="border-l-4 pl-8 py-2" style={{ borderColor: COLORS.cta }}>
-                  {content.restaurant.note}
-                </p>
               </div>
             </motion.div>
           </div>
