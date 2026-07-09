@@ -55,7 +55,7 @@ export const SITE_CONFIG = {
     welcome: {
       label: 'Welcome to Popina',
       headline: 'Popina is a modern café and evening restaurant built around honest food, genuine hospitality and respect for where good things come from.',
-      description: 'We’re creating a space where people can slow down, connect and enjoy hospitality that feels thoughtful, comforting and real.',
+      description: 'We’ve creating a space where people can slow down, connect and enjoy hospitality that feels thoughtful, comforting and real.',
       subDescription: 'A quick coffee, a long lunch, or dinner shared with friends.'
     },
     features: {
@@ -83,13 +83,13 @@ export const SITE_CONFIG = {
     hero: {
       label: 'The Land',
       headline: 'From dry land to something living.',
-      p1: 'For the past ten years, Brenda and Tony have been growing trees from seed and planting them across the property.',
-      p2: 'The vision is simple: restore the land, make it productive and let the place become part of the experience.',
-      quote: "Fruit trees. Garlic. Saffron. Gardens. Compost. Chickens. Eggs for baking. Food scraps are going back into the system.",
-      p3: 'It is not sustainability as a slogan. It is a loop. A working, circular rhythm that starts with care for the land and comes back to the table.'
+      p1: 'For the past ten years, Brenda and Tony have been restoring the Pukerangi land — planting trees, building soil health, and developing productive gardens, orchards, and groves across the property.',
+p2: 'Their vision is simple: restore the land, make it productive, and let it become an integral part of the Popina experience. The Productive Patch supplies saffron, garlic, vegetables and herbs, alongside a heritage cider apple orchard, olive grove, feijoas and nut trees.',
+quote: "Fruit trees. Garlic. Saffron. Gardens. Compost. Chickens. Eggs for baking. Food scraps. More compost. Soil fertility. And around we go again.",
+p3: 'This isn't sustainability as a slogan. It's a working cycle — where care for the land comes back through the kitchen, and ultimately becomes part of the experience at Popina.'
     },
     philosophy: {
-      quote: "Not a polished city restaurant dropped into the country. Something more useful than that. A community oasis, grown from the ground up."
+      quote: "A community oasis, grown from the ground up."
     },
     culinary: {
       label: 'Culinary Heart',
@@ -108,7 +108,7 @@ export const SITE_CONFIG = {
     restaurant: {
       label: 'The Restaurant',
       headline: 'A restaurant with room to breathe.',
-      p1: 'Seasonal produce. Proper ingredients. Simple cooking done with care. Drinks chosen with the same thought.',
+      p1: 'p1: 'Seasonal produce. Thoughtfully selected local wines and beers. Simple cooking crafted with care. Cocktails and great coffee chosen with the same thinking.',
       p2: 'A room where people can relax, talk, laugh, bring the family, park the boat, pull in with the horse float, or stop in after driving through Central Otago.',
       list: [
         'A place for locals.',
