@@ -192,9 +192,6 @@ const AboutPage = () => {
                   <p>
                     {content.hospitality.p3}
                   </p>
-                  <p className="text-2xl font-mono italic border-t border-dark/10 pt-8" style={{ color: COLORS.cta }}>
-                    "{content.hospitality.quote}"
-                  </p>
                 </div>
               </div>
             </motion.div>
