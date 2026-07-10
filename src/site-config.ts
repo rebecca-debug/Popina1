@@ -153,7 +153,7 @@ export const SITE_CONFIG = {
     localSpot: '/popina-localspot.jpg?v=9',
     landscapeSouth: '/popina-southview.jpg?v=9',
     foodView: '/popina-view.jpg?v=9',
-    menu: '/popina-menu.jpg?v=9',
+    menu: '/popina-menu.jpg?v=10',
     wedding: '/popina-wedding.jpg?v=9',
     hospo: '/popina-hospo.jpg?v=9',
   },
