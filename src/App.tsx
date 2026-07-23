@@ -738,18 +738,30 @@ const ReservationPage = () => {
 };
 
 const GiftCardPage = () => {
-  useEffect(() => {
+useEffect(() => {
     // Add NowBookIt script
     const script = document.createElement('script');
     script.src = "https://plugins.nowbookit.com/iframe-resizer-build/bundle.js";
     script.async = true;
     document.body.appendChild(script);
-    
+
+    // Auto-fit the gift card window to its content so the Buy Now button is never cut off
+    const handleResize = (event: MessageEvent) => {
+      if (typeof event.data === "string" && event.data.indexOf("[iFrameSizer]") === 0) {
+        const newHeight = parseFloat(event.data.split(":")[2]);
+        const frame = document.querySelector('iframe[data-id="nbi-widget"]') as HTMLIFrameElement | null;
+        if (frame && newHeight > 0) {
+          frame.style.height = newHeight + "px";
+        }
+      }
+    }, []);
+    window.addEventListener("message", handleResize);
+
     // Scroll to top on mount
     window.scrollTo(0, 0);
 
     return () => {
-      // Clean up script
+      window.removeEventListener("message", handleResize);
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
