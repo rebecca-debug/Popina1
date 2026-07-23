@@ -1,4 +1,4 @@
-/**
+**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -702,7 +702,7 @@ const ReservationPage = () => {
           <iframe 
             data-id="nbi-widget" 
             src={SITE_CONFIG.links.bookingIframe}
-            className="w-full h-[800px] border-none"
+            className="w-full h-[1700px] md:h-[1200px] border-none"
             title="Now Book It Reservation Widget"
           />
         </div>
