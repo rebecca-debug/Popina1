@@ -702,7 +702,7 @@ const ReservationPage = () => {
           <iframe 
             data-id="nbi-widget" 
             src={SITE_CONFIG.links.bookingIframe}
-            className="w-full h-[1700px] md:h-[1200px] border-none"
+            className="w-full h-[800px] border-none"
             title="Now Book It Reservation Widget"
           />
         </div>
@@ -766,7 +766,7 @@ useEffect(() => {
         document.body.removeChild(script);
       }
     };
-  }, []);
+  };
 
   return (
     <div className="bg-[#F5F2ED] pt-32 pb-20">
@@ -783,7 +783,7 @@ useEffect(() => {
           <iframe 
             data-id="nbi-widget" 
             src={SITE_CONFIG.links.giftCardIframe}
-            className="w-full h-[800px] border-none"
+            className="w-full h-[950px] border-none"
             title="Now Book It Gift Card Widget"
           />
         </div>
