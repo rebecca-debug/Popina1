@@ -748,10 +748,10 @@ useEffect(() => {
     // Auto-fit the gift card window to its content so the Buy Now button is never cut off
     const handleResize = (event: MessageEvent) => {
       if (typeof event.data === "string" && event.data.indexOf("[iFrameSizer]") === 0) {
-        const newHeight = parseFloat(event.data.split(":")[2]);
+ const reported = parseFloat(event.data.split(":")[1]);
         const frame = document.querySelector('iframe[data-id="nbi-widget"]') as HTMLIFrameElement | null;
-        if (frame && newHeight > 0) {
-          frame.style.height = newHeight + "px";
+        if (frame && reported > 100) {
+          frame.style.height = Math.max(reported + 60, 900) + "px";
         }
       }
     };
