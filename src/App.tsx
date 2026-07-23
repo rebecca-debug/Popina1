@@ -754,7 +754,7 @@ useEffect(() => {
           frame.style.height = newHeight + "px";
         }
       }
-    }, []);
+    };
     window.addEventListener("message", handleResize);
 
     // Scroll to top on mount
@@ -766,7 +766,7 @@ useEffect(() => {
         document.body.removeChild(script);
       }
     };
-  };
+  }, []);
 
   return (
     <div className="bg-[#F5F2ED] pt-32 pb-20">
