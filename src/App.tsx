@@ -248,6 +248,12 @@ const Footer = () => (
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/join-the-team" className="group flex items-center gap-2 text-dark/80 hover:text-dark transition-colors text-[10px] font-extrabold uppercase tracking-[0.3em]">
+                  <span className="w-0 group-hover:w-4 h-px bg-dark transition-all" />
+                  Join the Team
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -799,6 +805,56 @@ useEffect(() => {
   );
 };
 
+const JoinTheTeamPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="bg-[#F5F2ED] pt-32 pb-20">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="uppercase tracking-[0.6em] text-[10px] font-extrabold block mb-6 text-[#784277]">Join the Team</span>
+          <h1 className="text-5xl lg:text-8xl font-mono font-bold text-dark/90 mb-8">Come Work With Us</h1>
+          <p className="text-dark/50 text-lg lg:text-xl max-w-2xl mx-auto font-medium italic">
+            We are always glad to meet good people who care about food, service, and doing things properly. If that sounds like you, we would love to hear from you.
+          </p>
+          <div className="w-16 h-px bg-[#784277] mx-auto mt-10" />
+        </div>
+
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="bg-white p-8 md:p-14 rounded-sm shadow-xl border border-dark/5">
+            <h2 className="text-2xl lg:text-3xl font-mono text-dark/90 mb-6">Good people, good work.</h2>
+            <div className="space-y-6 text-dark/60 text-base lg:text-lg leading-relaxed font-medium">
+              <p>
+                Popina runs on warm, straight-up hospitality and food made with care. Whether your place is in the kitchen, on the floor, or somewhere in between, what matters is that you take pride in doing things well and enjoy looking after people.
+              </p>
+              <p>
+                No CV theatre and no buzzwords required. Tell us who you are, what you love doing, and why Popina feels like your kind of place.
+              </p>
+            </div>
+
+            <div className="mt-12">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSe8SekxJd5ttY6VGVQ1Xy5Md999PEjFqdb4oEZoOz0Jdiy7WQ/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#784277] hover:bg-dark text-white px-14 py-5 rounded-sm text-[12px] font-bold uppercase tracking-[0.4em] transition-all shadow-xl hover:scale-105 active:scale-95 text-center"
+              >
+                Apply Now
+              </a>
+            </div>
+          </div>
+
+          <p className="text-dark/40 text-[11px] font-medium italic mt-8 tracking-wide">
+            The application form opens in a new tab.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function App() {
   return (
     <Router>
@@ -824,6 +880,7 @@ export default function App() {
             <Route path="/celebrations" element={<CelebrationsPage />} />
             <Route path="/reservations" element={<ReservationPage />} />
             <Route path="/gift-cards" element={<GiftCardPage />} />
+            <Route path="/join-the-team" element={<JoinTheTeamPage />} />
           </Routes>
         </main>
 
